@@ -1,0 +1,17 @@
+government = monarchy
+add_government_reform = autocracy_reform
+technology_group = chinese
+religion = confucianism
+primary_culture = chimin
+capital = 1829	#Quanzhou
+
+1442.11.6 = {
+	monarch = {
+		name = "Biao" 
+		dynasty = "Gui"
+		birth_date = 1421.12.6
+		adm = 3
+		dip = 4
+		mil = 2
+	}
+}

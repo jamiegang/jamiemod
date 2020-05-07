@@ -1,0 +1,17 @@
+government = monarchy
+add_government_reform = autocracy_reform
+primary_culture = yi
+religion = animism
+technology_group = chinese
+capital = 675	# Umung
+
+1442.11.6 = { 
+	monarch = {
+		name = "Zhibao"
+		dynasty = "Chu"
+		birth_date = 1410.12.6
+		adm = 6
+		dip = 6
+		mil = 6
+	}
+}

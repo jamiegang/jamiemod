@@ -1,0 +1,10 @@
+NDefines.NCountry.DISINHERIT_PRESTIGE_HIT = -25
+NDefines.NCountry.PS_ARTILLERY_BARRAGE = 25
+NDefines.NCountry.PS_NAVAL_BARRAGE = 25
+NDefines.NCountry.CAN_CONVERT_TERRITORY_CULTURE = 1 -- Defines if you are allowed to culture convert territory provinces
+NDefines.NCountry.CAN_CONVERT_TERRITORY_RELIGION = 1 -- Defines if you are allowed to convert religion of territory provinces
+NDefines.NEconomy.BANKRUPTCY_BUILDING_DESTRUCTION_THRESHOLD = 7
+NDefines.NMilitary.ARMY_DRILL_YEARLY_DECAY = -1.5
+NDefines.NMilitary.MERCENARY_SUPPORT_LIMIT_FRACTION = 0.2
+NDefines.NMilitary.WARGOAL_MAX_BONUS = 40
+NDefines.NReligion.HARMONY_LOSS_PER_DEV_CONVERTED = 0.5

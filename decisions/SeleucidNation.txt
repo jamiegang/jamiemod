@@ -1,0 +1,197 @@
+country_decisions = {
+	
+	restore_seleucid = {
+		major = yes
+		potential = {
+			normal_or_historical_nations = yes
+			NOT = { tag = HLR }
+			NOT = { tag = RUM }
+			NOT = { tag = PER }
+			NOT = { tag = TIM }
+			NOT = { tag = ARB }
+			NOT = { tag = EGY }
+			NOT = { tag = TUR }
+			NOT = { tag = MAM }
+			NOT = { tag = X01 }
+			NOT = { has_country_flag = formed_seleucid_flag}
+			NOT = { government = celestial_empire }
+			NOT = { religion = sunni }
+			NOT = { religion = shiite }
+			NOT = { religion = ibadi }
+			owns_core_province =  2313 # Antioch
+			is_colonial_nation = no
+			OR = {
+				is_former_colonial_nation = no
+				AND = {
+					is_former_colonial_nation = yes
+					ai = no
+				}
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2313 # Antioch
+				province_id = 377 #  Aleppo	
+				province_id = 327 #  Adana
+				province_id = 382 #  Dimashq
+				province_id = 410 #  Baghdad
+				province_id = 411 #  Mosul 
+				province_id = 324 #  Karaman
+				province_id = 319 #  Mentese
+			}
+			NOT = { owned_by = ROOT }
+		}
+		allow = {
+			adm_tech = 10
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			is_at_war = no
+			owns_core_province =  2313 # Antioch
+			owns_core_province =  377 #  Aleppo	
+			owns_core_province =  327 #  Adana
+			owns_core_province =  382 #  Dimashq
+			owns_core_province =  410 #  Baghdad
+			owns_core_province =  411 #  Mosul 
+		}
+		effect = {
+			change_tag = X01
+			swap_non_generic_missions = yes
+			if = {
+				limit = {
+					is_part_of_hre = yes
+					is_elector = no
+					is_emperor = no
+				}
+				every_owned_province = {
+					limit = {
+						is_part_of_hre = yes
+					}
+					set_in_empire = no
+				}
+			}
+			
+			add_prestige = 25
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						has_owner_culture = yes
+					}
+					change_culture = greek
+				}
+			}
+			change_primary_culture = greek
+			add_accepted_culture = al_suryah_arabic
+			add_accepted_culture = turkish
+			add_accepted_culture = al_iraqiya_arabic
+			if = {
+				limit = {
+					NOT = { government_rank = 3 }
+				}
+				set_government_rank = 3
+			}
+			2313 = {
+			 	add_base_tax = 1
+				add_base_production = 1
+			 	add_base_manpower = 2
+			}
+			set_capital = 2313
+			
+			if = {
+                limit = { has_custom_ideas = no }
+                country_event = { id = ideagroups.1 } #Swap Ideas
+            }
+			
+			change_technology_group = eastern
+			change_unit_type = eastern
+			
+			add_legitimacy = 20
+			define_heir = {
+				ADM = 5
+				DIP = 4
+				MIL = 4
+				dynasty = "Seleucus"
+			}
+			
+			if = {
+				limit = {
+					NOT = {
+						government = monarchy
+					}
+				}
+				change_government = monarchy
+			}
+			cukurova_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = X01
+			}
+			aleppo_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = X01
+			}
+			syria_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = X01
+			}
+			aydin_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = X01
+			}
+			karaman_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = X01
+			}
+			germiyan_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = X01
+			}
+			dulkadir_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = X01
+			}
+			basra_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = X01
+			}
+			al_jazira_area = {
+				limit = {
+					NOT { owned_by = ROOT }
+				}
+				add_permanent_claim = X01
+			}
+			iraq_arabi_area = {
+				limit = {
+					NOT { owned_by = ROOT }
+				}
+				add_permanent_claim = X01
+			}
+			syrian_desert_area = {
+				limit = {
+					NOT { owned_by = ROOT }
+				}
+				add_permanent_claim = X01
+			}
+			set_country_flag = formed_seleucid_flag
+		}
+	}
+}

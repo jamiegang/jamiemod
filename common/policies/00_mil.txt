@@ -1,0 +1,1278 @@
+armed_mercahnts_act = {
+	monarch_power = DIP
+
+
+	potential = {
+		has_idea_group = naval_ideas
+		has_idea_group = defensive_ideas
+		OR = {
+			full_idea_group = naval_ideas
+			full_idea_group = defensive_ideas
+		}
+	}
+	
+	allow = {
+		full_idea_group = naval_ideas
+		full_idea_group = defensive_ideas
+	}
+
+	ship_durability = 0.05
+	naval_morale = 0.10
+	
+	ai_will_do = {
+		factor = 0.6
+		modifier = {
+			factor = 0.2
+			is_at_war = yes
+		}
+	}
+
+}
+
+the_maritime_intelligencer_unit = {
+	monarch_power = DIP
+	
+	potential = {
+		has_idea_group = naval_ideas
+		has_idea_group = quality_ideas
+	}
+	
+	allow = {
+		full_idea_group = naval_ideas
+		full_idea_group = quality_ideas
+	}	
+	
+	siege_blockade_progress = 1
+	capture_ship_chance = 0.1
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 0
+			NOT = { num_of_heavy_ship = 10 }
+		}
+	}
+}
+
+foreign_conscription_centers = {
+	monarch_power = MIL
+	
+	potential = {
+		has_idea_group = influence_ideas
+		has_idea_group = offensive_ideas
+	}
+	
+	allow = {
+		full_idea_group = influence_ideas
+		full_idea_group = offensive_ideas
+	}	
+	
+	cavalry_power = 0.20
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 0
+			NOT = { vassal = 1 }
+		}
+		modifier = {
+			factor = 1.5
+			vassal = 2
+		}
+		modifier = {
+			factor = 1.5
+			vassal = 3
+		}			
+		modifier = {
+			factor = 1.5
+			vassal = 4
+		}
+		modifier = {
+			factor = 1.5
+			vassal = 5
+		}	
+	}
+}
+
+quality_shipyards_act = {
+	monarch_power = DIP
+
+
+	potential = {
+		has_idea_group = naval_ideas
+		has_idea_group = quantity_ideas
+		OR = {
+			full_idea_group = naval_ideas
+			full_idea_group = quantity_ideas
+		}
+	}
+	
+	allow = {
+		full_idea_group = naval_ideas
+		full_idea_group = quantity_ideas
+	}
+
+	global_ship_cost = -0.05
+	global_ship_recruit_speed = -0.1
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 1.5
+			is_at_war = yes
+		}
+	}
+}
+the_provincial_taxation_system = {
+	monarch_power = MIL
+
+	potential = {
+		has_idea_group = administrative_ideas
+		has_idea_group = quantity_ideas
+		OR = {
+			full_idea_group = administrative_ideas
+			full_idea_group = quantity_ideas
+		}
+	}
+	
+	allow = {
+		full_idea_group = administrative_ideas
+		full_idea_group = quantity_ideas
+	}
+	
+	possible_mercenaries = 0.5
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 1.5
+			is_at_war = yes
+		}
+	}
+	
+}
+
+supply_train_act = {
+
+	monarch_power = MIL
+
+	potential = {
+		has_idea_group = expansion_ideas
+		has_idea_group = quality_ideas
+		OR = {
+			full_idea_group = expansion_ideas
+			full_idea_group = quality_ideas
+		}	
+	}
+	allow = {
+		full_idea_group = expansion_ideas
+		full_idea_group = quality_ideas
+	}
+	
+	leader_land_fire = 1
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 1.5
+			is_at_war = yes
+		}
+	}
+}
+
+the_liquor_act = {
+
+	monarch_power = ADM
+	
+	
+	potential = {
+		has_idea_group = quality_ideas
+		has_idea_group = administrative_ideas
+		OR = {
+			full_idea_group = quality_ideas
+			full_idea_group = administrative_ideas
+		}
+	}
+	
+	allow = {
+		full_idea_group = quality_ideas
+		full_idea_group = administrative_ideas
+	}	
+	
+	prestige = 0.5
+	prestige_decay = -0.01
+
+	ai_will_do = {
+		factor = 0.6
+	}
+}
+
+rapid_redeployment_policy = {
+	monarch_power = MIL
+	
+	potential = {
+		has_idea_group = offensive_ideas
+		has_idea_group = economic_ideas
+		OR = {
+			full_idea_group = offensive_ideas
+			full_idea_group = economic_ideas
+		}
+	}
+	
+	allow = {
+		full_idea_group = offensive_ideas
+		full_idea_group = economic_ideas
+	}
+	
+	movement_speed = 0.25
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 0
+			NOT = { artillery_fraction = 0.2 }
+		}			
+		modifier = {
+			factor = 1.5
+			artillery_fraction = 0.28
+		}
+		modifier = {
+			factor = 1.5
+			artillery_fraction = 0.38
+		}
+		modifier = {
+			factor = 1.5
+			artillery_fraction = 0.45
+		}
+	}
+}
+
+
+
+armed_neutrality_act = {
+	monarch_power = MIL
+	
+	potential = {
+		has_idea_group = defensive_ideas
+		has_idea_group = trade_ideas
+		OR = {
+			full_idea_group = defensive_ideas
+			full_idea_group = trade_ideas
+		}
+	}
+	
+	allow = {
+		full_idea_group = defensive_ideas
+		full_idea_group = trade_ideas
+	}
+	
+	light_ship_power = 0.33
+	global_own_trade_power = 0.1
+
+	ai_will_do = {
+		factor = 0.6
+		modifier = {
+			factor = 0.6
+			NOT = { trade_income_percentage = 0.1 }
+		}			
+		modifier = {
+			factor = 1.5
+			trade_income_percentage = 0.2
+		}
+		modifier = {
+			factor = 1.5
+			trade_income_percentage = 0.3
+		}
+		modifier = {
+			factor = 1.5
+			trade_income_percentage = 0.4
+		}
+		modifier = {
+			factor = 1.5
+			trade_income_percentage = 0.5
+		}
+	}
+}
+
+anti_smuggling_act = {
+	monarch_power = DIP
+	
+	potential = {
+		has_idea_group = offensive_ideas
+		has_idea_group = trade_ideas
+		OR = {
+			full_idea_group = offensive_ideas
+			full_idea_group = trade_ideas
+		}
+	}
+	
+	allow = {
+		full_idea_group = offensive_ideas
+		full_idea_group = trade_ideas
+	}
+	
+	global_trade_power = 0.1
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 0.6
+			NOT = { trade_income_percentage = 0.1 }
+		}			
+		modifier = {
+			factor = 1.5
+			trade_income_percentage = 0.2
+		}
+		modifier = {
+			factor = 1.5
+			trade_income_percentage = 0.3
+		}
+		modifier = {
+			factor = 1.5
+			trade_income_percentage = 0.4
+		}
+		modifier = {
+			factor = 1.5
+			trade_income_percentage = 0.5
+		}
+	}
+}
+
+
+
+trained_marines_act = {
+	monarch_power = DIP
+	
+	potential = {
+		has_idea_group = quality_ideas
+		has_idea_group = maritime_ideas
+		OR = {
+			full_idea_group = quality_ideas
+			full_idea_group = maritime_ideas
+		}
+	}
+	
+	allow = {
+		full_idea_group = quality_ideas
+		full_idea_group = maritime_ideas
+	}
+	
+	heavy_ship_power = 0.10
+	naval_morale = 0.05
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 0
+			NOT = { navy_size = 20 }
+		}
+	}
+}
+
+superior_supply_system = {
+	monarch_power = MIL
+	
+	potential = {
+		has_idea_group = quality_ideas
+		has_idea_group = exploration_ideas
+		OR = {
+			full_idea_group = quality_ideas
+			full_idea_group = exploration_ideas
+		}
+	}
+	
+	allow = {
+		full_idea_group = quality_ideas
+		full_idea_group = exploration_ideas
+	}
+	
+	global_manpower_modifier = 0.10
+	manpower_recovery_speed = 0.1
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 1.5
+			is_at_war = yes
+		}
+	}
+}
+
+
+modern_siege_weapons = {
+	monarch_power = MIL
+	
+	potential = {
+		has_idea_group = innovativeness_ideas
+		has_idea_group = offensive_ideas
+		OR = {
+			full_idea_group = innovativeness_ideas
+			full_idea_group = offensive_ideas
+		}
+	}
+	
+	allow = {
+		full_idea_group = innovativeness_ideas
+		full_idea_group = offensive_ideas
+	}
+	
+	leader_siege = 1
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 1.5
+			is_at_war = yes
+		}
+	}
+}
+
+superior_fortification_act = {
+	monarch_power = MIL
+	
+	potential = {
+		has_idea_group = innovativeness_ideas
+		has_idea_group = defensive_ideas
+		OR = {
+			full_idea_group = innovativeness_ideas
+			full_idea_group = defensive_ideas
+		}
+	}
+	
+	allow = {
+		full_idea_group = innovativeness_ideas
+		full_idea_group = defensive_ideas
+	}
+	
+	defensiveness = 0.1
+	fort_maintenance_modifier = -0.20
+
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+modern_firearm_techniques = {
+	monarch_power = MIL
+	
+	potential = {
+		has_idea_group = innovativeness_ideas
+		has_idea_group = quality_ideas
+		OR = {
+			full_idea_group = innovativeness_ideas
+			full_idea_group = quality_ideas
+		}
+	}
+	
+	allow = {
+		full_idea_group = innovativeness_ideas
+		full_idea_group = quality_ideas
+	}
+	
+	infantry_power = 0.1
+	fire_damage_received = -0.05
+
+	ai_will_do = {
+		factor = 1.2		
+		modifier = {
+			factor = 1.5
+			infantry_fraction = 0.28
+		}
+		modifier = {
+			factor = 1.5
+			infantry_fraction = 0.38
+		}
+		modifier = {
+			factor = 1.5
+			infantry_fraction = 0.45
+		}
+	}
+}
+
+great_recovery_act = {
+	monarch_power = MIL
+	
+	potential = {
+		has_idea_group = innovativeness_ideas
+		has_idea_group = quantity_ideas
+		OR = {
+			full_idea_group = innovativeness_ideas
+			full_idea_group = quantity_ideas
+		}
+	}
+	
+	allow = {
+		full_idea_group = innovativeness_ideas
+		full_idea_group = quantity_ideas
+	}
+	
+	global_regiment_cost = -0.1
+	manpower_recovery_speed = 0.1
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+
+
+
+
+
+combined_operations_act = {
+	monarch_power = MIL
+	
+	potential = {
+		has_idea_group = naval_ideas
+		has_idea_group = offensive_ideas
+		OR = {
+			full_idea_group = naval_ideas
+			full_idea_group = offensive_ideas
+		}
+	}
+	
+	allow = {
+		full_idea_group = naval_ideas
+		full_idea_group = offensive_ideas
+	}
+	
+	leader_land_manuever = 1
+	global_naval_engagement_modifier = 0.1
+
+	ai_will_do = {
+		factor = 0.6
+	}
+}
+
+
+
+anti_heresy_act = {
+	monarch_power = MIL
+	
+	potential = {
+		has_idea_group = religious_ideas
+		has_idea_group = offensive_ideas
+		OR = {
+			full_idea_group = religious_ideas
+			full_idea_group = offensive_ideas
+		}
+	}
+	
+	allow = {
+		full_idea_group = religious_ideas
+		full_idea_group = offensive_ideas
+	}
+	
+	religious_unity = 0.2
+	global_heretic_missionary_strength = 0.03
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 0
+			religious_unity = 1
+		}
+		modifier = {
+			factor = 1.5
+			NOT = { religious_unity = 0.8 }
+		}
+		modifier = {
+			factor = 1.5
+			NOT = { religious_unity = 0.6 }
+		}			
+		modifier = {
+			factor = 1.5
+			NOT = { religious_unity = 0.4 }
+		}
+		modifier = {
+			factor = 1.5
+			NOT = { religious_unity = 0.2 }
+		}			
+	}
+}
+
+
+
+
+military_zeal_act = {
+	monarch_power = MIL
+	
+	potential = {
+		has_idea_group = quality_ideas
+		has_idea_group = religious_ideas
+		OR = {
+			full_idea_group = quality_ideas
+			full_idea_group = religious_ideas
+		}
+	}
+	
+	allow = {
+		full_idea_group = quality_ideas
+		full_idea_group = religious_ideas
+	}
+	
+	land_morale = 0.05
+	siege_ability = 0.1
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 1.5
+			is_at_war = yes
+		}
+	}
+}
+
+
+
+letters_of_marque = {
+	monarch_power = DIP
+	
+	potential = {
+		has_idea_group = offensive_ideas
+		has_idea_group = exploration_ideas
+		OR = {
+			full_idea_group = offensive_ideas
+			full_idea_group = exploration_ideas
+		}
+	}
+	
+	allow = {
+		full_idea_group = offensive_ideas
+		full_idea_group = exploration_ideas
+	}
+	
+	heavy_ship_power = 0.10
+
+	
+	ai_will_do = {
+		factor = 0.6
+		modifier = {
+			factor = 0
+			NOT = { num_of_light_ship = 20 }
+		}
+	}
+}
+
+
+
+
+
+field_priests = {
+	monarch_power = MIL
+
+	potential = {
+		has_idea_group = religious_ideas
+		has_idea_group = quantity_ideas
+		OR = {
+			full_idea_group = religious_ideas
+			full_idea_group = quantity_ideas
+		}
+	}
+	
+	allow = {
+		full_idea_group = religious_ideas
+		full_idea_group = quantity_ideas
+	}
+
+	land_morale = 0.1
+	recover_army_morale_speed = 0.05
+	
+	ai_will_do = {
+		factor = 1.2
+		modifier = {
+			factor = 1.5
+			is_at_war = yes
+		}
+	}
+}
+
+pen_rely_on_sword_act = {
+	monarch_power = MIL
+	potential = {
+		has_idea_group = diplomatic_ideas
+		has_idea_group = quantity_ideas
+		OR = {
+			full_idea_group = diplomatic_ideas
+			full_idea_group = quantity_ideas
+		}
+	}
+	
+	allow = {
+		full_idea_group = diplomatic_ideas
+		full_idea_group = quantity_ideas
+	}
+	
+	infantry_power = 0.10
+	possible_condottieri = 2.0
+
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 0
+			NOT = { army_size_percentage = 0.9 }
+		}			
+		modifier = {
+			factor = 1.5
+			army_size_percentage = 1.1
+		}
+		modifier = {
+			factor = 1.5
+			army_size_percentage = 1.5
+		}
+		modifier = {
+			factor = 1.5
+			army_size_percentage = 2
+		}
+		modifier = {
+			factor = 1.5
+			army_size_percentage = 2.5
+		}
+	}
+}
+
+diplomatic_defence_act = {
+	monarch_power = MIL
+	potential = {
+		has_idea_group = diplomatic_ideas
+		has_idea_group = defensive_ideas
+		OR = {
+			full_idea_group = diplomatic_ideas
+			full_idea_group = defensive_ideas
+		}
+	}
+	
+	allow = {
+		full_idea_group = diplomatic_ideas
+		full_idea_group = defensive_ideas
+	}
+
+	shock_damage_received = -0.05
+	fire_damage_received = -0.05
+	
+	
+	ai_will_do = {
+		factor = 0.7
+		modifier = {
+			factor = 0
+			NOT = { num_of_cities = 10 }
+		}		
+	}
+	
+}
+
+local_army_organisation = {
+	monarch_power = MIL
+	potential = {
+		has_idea_group = expansion_ideas
+		has_idea_group = defensive_ideas
+		OR = {
+			full_idea_group = expansion_ideas
+			full_idea_group = defensive_ideas
+		}
+	}
+	
+	allow = {
+		full_idea_group = expansion_ideas
+		full_idea_group = defensive_ideas
+	}
+
+	army_tradition_decay = -0.01
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+the_smite_act = {
+	monarch_power = MIL
+	potential = {
+		has_idea_group = diplomatic_ideas
+		has_idea_group = offensive_ideas
+		OR = {
+			full_idea_group = diplomatic_ideas
+			full_idea_group = offensive_ideas
+		}
+	}
+	
+	allow = {
+		full_idea_group = diplomatic_ideas
+		full_idea_group = offensive_ideas
+	}
+	
+	possible_mercenaries = 0.10
+	siege_ability = 0.20
+
+	ai_will_do = {
+		factor = 0.6
+	}
+}
+
+
+hired_adventurers_act = {
+	monarch_power = MIL
+	potential = {
+		has_idea_group = quantity_ideas
+		has_idea_group = exploration_ideas
+		OR = {
+			full_idea_group = quantity_ideas
+			full_idea_group = exploration_ideas
+		}
+	}
+	
+	allow = {
+		full_idea_group = quantity_ideas
+		full_idea_group = exploration_ideas
+	}
+
+	global_manpower_modifier = 0.1
+	leader_land_manuever = 1
+
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 1.5
+			is_at_war = yes
+		}
+	}
+}
+
+military_officer_excellence_act = {
+	monarch_power = ADM
+
+	potential = {
+		has_idea_group = administrative_ideas
+		has_idea_group = aristocracy_ideas
+		OR = {
+			full_idea_group = administrative_ideas
+			full_idea_group = aristocracy_ideas
+		}
+	}
+	
+	allow = {
+		full_idea_group = administrative_ideas
+		full_idea_group = aristocracy_ideas
+	}
+
+	legitimacy = 1
+	horde_unity = 1
+	devotion = 1
+	meritocracy = 0.5
+	republican_tradition = 0.5
+	
+	ai_will_do = {
+		factor = 0.8
+	}	
+}
+	
+	
+		
+the_tenures_abolition_act = {
+
+	monarch_power = MIL
+
+	potential = {
+		has_idea_group = diplomatic_ideas
+		has_idea_group = aristocracy_ideas
+		OR = {
+			full_idea_group = diplomatic_ideas
+			full_idea_group = aristocracy_ideas
+		}
+	}
+	
+	allow = {
+		full_idea_group = diplomatic_ideas
+		full_idea_group = aristocracy_ideas
+	}
+
+	diplomatic_upkeep = 1
+	leader_siege = 1
+		
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 0
+			legitimacy = 95
+		}		
+		modifier = {
+			factor = 1.5
+			NOT = { legitimacy = 80 }
+		}
+		modifier = {
+			factor = 1.5
+			NOT = { legitimacy = 60 }
+		}			
+		modifier = {
+			factor = 1.5
+			NOT = { legitimacy = 40 }
+		}
+		modifier = {
+			factor = 1.5
+			NOT = { legitimacy = 20 }
+		}			
+	}	
+	
+}
+	
+	
+	
+
+colonial_garrisons = {
+
+	monarch_power = MIL
+
+
+	potential = {
+		has_idea_group = quantity_ideas
+		has_idea_group = expansion_ideas
+		OR = {
+			full_idea_group = quantity_ideas
+			full_idea_group = expansion_ideas
+		}
+	}
+	
+	allow = {
+		full_idea_group = quantity_ideas
+		full_idea_group = expansion_ideas
+	}
+
+	land_forcelimit_modifier = 0.1
+	global_manpower_modifier = 0.10
+	global_colonial_growth = 10
+
+	ai_will_do = {
+		factor = 0.8
+		modifier = {
+			factor = 0
+			NOT = { num_of_colonists = 1 }
+		}
+		modifier = {
+			factor = 0.1
+			NOT = { num_of_colonies = 1 }
+		}
+	}
+}
+
+
+the_naval_supremacy_act = {
+	monarch_power = DIP
+	
+	potential = {
+		has_idea_group = spy_ideas
+		has_idea_group = maritime_ideas
+		OR = {
+			full_idea_group = spy_ideas
+			full_idea_group = maritime_ideas
+		}
+	}
+	
+	allow = {
+		full_idea_group = spy_ideas
+		full_idea_group = maritime_ideas
+	}	
+	
+	blockade_efficiency = 0.5
+	naval_forcelimit_modifier = 0.10
+	
+	ai_will_do = {
+		factor = 0.8
+		modifier = {
+			factor = 0
+			NOT = { navy_size = 20 }
+		}
+	}
+}
+
+messenger_ships = {
+	monarch_power = DIP
+	
+	potential = {
+		has_idea_group = naval_ideas
+		has_idea_group = spy_ideas
+		OR = {
+			full_idea_group = naval_ideas
+			full_idea_group = spy_ideas
+		}
+	}
+	
+	allow = {
+		full_idea_group = naval_ideas
+		full_idea_group = spy_ideas
+	}	
+	
+	recover_navy_morale_speed = 0.15
+	global_ship_repair = 0.15
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 0
+			NOT = { num_of_light_ship = 10 }
+		}
+	}
+}
+
+the_nautic_education_act = {
+	monarch_power = DIP
+	
+	potential = {
+		has_idea_group = naval_ideas
+		has_idea_group = innovativeness_ideas
+		OR = {
+			full_idea_group = naval_ideas
+			full_idea_group = innovativeness_ideas
+		}
+	}
+	
+	allow = {
+		full_idea_group = naval_ideas
+		full_idea_group = innovativeness_ideas
+	}	
+	
+	leader_naval_fire = 1
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 0
+			NOT = { navy_size = 10 }
+		}
+		modifier = {
+			factor = 0.6
+			NOT = { navy_size = 20 }
+		}
+	}
+}
+
+zealous_captains = {
+	monarch_power = MIL
+	
+	potential = {
+		has_idea_group = naval_ideas
+		has_idea_group = religious_ideas
+		OR = {
+			full_idea_group = naval_ideas
+			full_idea_group = religious_ideas
+		}
+	}
+	
+	allow = {
+		full_idea_group = naval_ideas
+		full_idea_group = religious_ideas
+	}	
+	
+	sunk_ship_morale_hit_recieved = -0.20
+	leader_naval_shock = 1
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 0
+			NOT = { navy_size = 10 }
+		}
+		modifier = {
+			factor = 0.6
+			NOT = { navy_size = 20 }
+		}
+	}
+}
+
+
+inspirational_leaders = {
+	monarch_power = MIL
+	
+	potential = {
+		has_idea_group = humanist_ideas
+		has_idea_group = quantity_ideas
+		OR = {
+			full_idea_group = humanist_ideas
+			full_idea_group = quantity_ideas
+		}
+	}
+	
+	allow = {
+		full_idea_group = humanist_ideas
+		full_idea_group = quantity_ideas
+	}	
+	
+	army_tradition = 1
+	
+	ai_will_do = {
+		factor = 1.2
+		modifier = {
+			factor = 1.5
+			is_at_war = yes
+		}
+	}
+}
+
+
+
+the_preparation_act = {
+	monarch_power = MIL
+	
+	potential = {
+		has_idea_group = humanist_ideas
+		has_idea_group = defensive_ideas
+		OR = {
+			full_idea_group = humanist_ideas
+			full_idea_group = defensive_ideas
+		}
+	}
+	
+	allow = {
+		full_idea_group = humanist_ideas
+		full_idea_group = defensive_ideas
+	}	
+	
+	hostile_attrition = 1
+	
+	ai_will_do = {
+		factor = 0.9
+		modifier = {
+			factor = 1.5
+			is_at_war = yes
+		}
+	}
+}
+
+local_militias = {
+	monarch_power = MIL
+	
+	potential = {
+		has_idea_group = influence_ideas
+		has_idea_group = defensive_ideas
+		OR = {
+			full_idea_group = influence_ideas
+			full_idea_group = defensive_ideas
+		}
+	}
+	
+	allow = {
+		full_idea_group = influence_ideas
+		full_idea_group = defensive_ideas
+	}	
+	
+	war_exhaustion = -0.03
+	defensiveness = 0.1
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+elite_regiments_act = {
+	monarch_power = MIL
+	
+	potential = {
+		has_idea_group = influence_ideas
+		has_idea_group = quantity_ideas
+		OR = {
+			full_idea_group = influence_ideas
+			full_idea_group = quantity_ideas
+		}
+	}
+	
+	allow = {
+		full_idea_group = influence_ideas
+		full_idea_group = quantity_ideas
+	}	
+	
+	land_morale = 0.1
+	
+	ai_will_do = {
+		factor = 0.8
+	}
+}
+
+light_cavalry_doctrine = {
+	monarch_power = MIL
+	
+	potential = {
+		has_idea_group = influence_ideas
+		has_idea_group = quality_ideas
+		OR = {
+			full_idea_group = influence_ideas
+			full_idea_group = quality_ideas
+		}
+	}
+	
+	allow = {
+		full_idea_group = influence_ideas
+		full_idea_group = quality_ideas
+	}	
+	
+	shock_damage = 0.10
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 0
+			NOT = { vassal = 1 }
+		}
+		modifier = {
+			factor = 1.5
+			vassal = 2
+		}
+		modifier = {
+			factor = 1.5
+			vassal = 3
+		}			
+		modifier = {
+			factor = 1.5
+			vassal = 4
+		}
+		modifier = {
+			factor = 1.5
+			vassal = 5
+		}			
+	}
+}
+
+danger_close_policy = {
+	monarch_power = MIL
+	
+	potential = {
+		has_idea_group = humanist_ideas
+		has_idea_group = spy_ideas
+		OR = {
+			full_idea_group = humanist_ideas
+			full_idea_group = spy_ideas
+		}
+	}
+	
+	allow = {
+		full_idea_group = humanist_ideas
+		full_idea_group = spy_ideas
+	}	
+	
+	backrow_artillery_damage = 0.1
+	global_manpower_modifier = 0.10
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 0
+			NOT = { average_effective_unrest = 1 }
+		}
+		modifier = {
+			factor = 1.5
+			average_effective_unrest = 2
+		}
+		modifier = {
+			factor = 1.5
+			average_effective_unrest = 4
+		}			
+		modifier = {
+			factor = 1.5
+			average_effective_unrest = 6
+		}
+		modifier = {
+			factor = 1.5
+			average_effective_unrest = 8
+		}
+	}
+}
