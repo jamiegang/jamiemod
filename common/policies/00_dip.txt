@@ -313,7 +313,6 @@ the_wooden_wall = {
 	}
 	
 	ship_durability = 0.05
-	naval_morale = 0.10
 	
 	ai_will_do = {
 		factor = 0.6
@@ -348,7 +347,7 @@ the_importation_act = {
 		full_idea_group = administrative_ideas
 	}
 	
-	trade_efficiency = 0.2
+	trade_efficiency = 0.15
 	
 	
 	ai_will_do = {
@@ -632,7 +631,6 @@ the_banking_system = {
 	}
 
 	interest = -0.25
-	trade_efficiency = 0.10
 
 
 	ai_will_do = {
@@ -674,8 +672,7 @@ new_naval_tactis = {
 	}
 
 	leader_naval_manuever = 1
-	heavy_ship_power = 0.1
-
+	global_trade_goods_size_modifier = 0.1
 
 	ai_will_do = {
 		factor = 1
@@ -743,8 +740,7 @@ nobility_embassy_act = {
 		full_idea_group = exploration_ideas
 	}
 
-	infantry_power = 0.10
-	light_ship_power = 0.25
+	light_ship_power = 0.35
 
 	ai_will_do = {
 		factor = 0.8
@@ -767,7 +763,8 @@ naval_cannons_act = {
 		full_idea_group = maritime_ideas
 	}
 
-	heavy_ship_power = 0.1
+	movement_speed = 0.1
+	trade_efficiency = 0.1
 
 	ai_will_do = {
 		factor = 0.6
@@ -797,7 +794,7 @@ naval_secrecy_act = {
 	}
 
 	global_spy_defence = 0.2
-	ship_durability = 0.10
+	ship_durability = 0.05
 
 	ai_will_do = {
 		factor = 0.8
@@ -854,7 +851,7 @@ cloth_quality_edict = {
 		full_idea_group = trade_ideas
 		full_idea_group = quality_ideas
 	}
-	trade_efficiency = 0.15
+	global_manpower_modifier = 0.10
 
 	ai_will_do = {
 		factor = 1.2
@@ -898,8 +895,8 @@ production_quota_act = {
 		full_idea_group = trade_ideas
 		full_idea_group = quantity_ideas
 	}
-	global_trade_goods_size_modifier = 0.15
- 
+	administrative_efficiency = 0.075
+	global_tax_modifier = 0.15
 
 	ai_will_do = {
 		factor = 0.7
@@ -970,7 +967,7 @@ aggressive_diplomacy = {
 	}
 	
 	global_trade_power = 0.1
-	diplomatic_reputation = 1
+	diplomatic_reputation = 2
 
 	ai_will_do = {
 		factor = 0.8		
@@ -1057,8 +1054,8 @@ policy_of_neutrality = {
 		full_idea_group = plutocracy_ideas
 	}
 	
-	global_trade_goods_size_modifier = 0.10
-	trade_efficiency = 0.10
+	naval_morale = 0.05
+	global_ship_recruit_speed = -0.15
 	
 
 	ai_will_do = {
@@ -1219,7 +1216,7 @@ chaplains_of_the_fleet = {
 		full_idea_group = maritime_ideas
 	}
 	
-	naval_morale = 0.1
+	siege_blockade_progress = 1
 	recover_navy_morale_speed = 0.05
 	
 	ai_will_do = {
@@ -1294,8 +1291,8 @@ multilingual_diplomats = {
 		full_idea_group = diplomatic_ideas
 	}	
 	
-	republican_tradition = 1
-	monarch_admin_power = 1
+	global_manpower_modifier = 0.10
+	vassal_forcelimit_bonus = 0.5
 	
 	ai_will_do = {
 		factor = 1
