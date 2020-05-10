@@ -4176,11 +4176,11 @@ javan_ideas = {
 AFG_ideas = {
 	start = {
 		army_tradition = 0.5
-		global_own_trade_power = 0.1
+		infantry_power = 0.15
 	}
 	
 	bonus = {
-		enemy_core_creation = 0.5
+		manpower_recovery_speed = 0.20
 	}
 	
 	trigger = {
@@ -4192,7 +4192,7 @@ AFG_ideas = {
 		war_exhaustion_cost = -0.10
 	}
 	shadows_of_the_hindu_kush = {
-		defensiveness = 0.25
+		defensiveness = 0.20
 	}
 	tureh = {
 		global_manpower_modifier = 0.2
@@ -4204,7 +4204,7 @@ AFG_ideas = {
 		cavalry_power = 0.15
 	}
 	institutionalized_loya_jirga = {
-		legitimacy = 1
+		global_trade_goods_size_modifier = 0.10
 	}
 	graveyard_of_empires = {
 		hostile_attrition = 1
