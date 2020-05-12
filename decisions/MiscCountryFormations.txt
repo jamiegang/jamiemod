@@ -21,7 +21,8 @@ country_decisions = {
 			NOT = { tag = PRU }
 			NOT = { tag = HSA }
 			NOT = { exists = HAN }
-			primary_culture = hannoverian #Westphalian
+			primary_culture = hessian
+			primary_culture = danish
 			is_colonial_nation = no
 			OR = {
 				ai = no
@@ -154,7 +155,6 @@ country_decisions = {
 			OR = {
 				ai = no
 				AND = {
-					owns_core_province = 52	# Magdeburg
 					owns_core_province = 82	# Westfalen
 					owns_core_province = 1758	# Hannover
 					owns_core_province = 1762	# Kassel
@@ -171,7 +171,6 @@ country_decisions = {
 		}
 		provinces_to_highlight = {
 			OR = {
-				province_id = 52	# Magdeburg
 				province_id = 82	# Westfalen
 				province_id = 1758	# Hannover
 				province_id = 1762	# Kassel
@@ -194,7 +193,6 @@ country_decisions = {
 			capital_scope = {
 				area = westphalia_area
 			}
-			owns_core_province = 52	# Magdeburg
 			owns_core_province = 82	# Westfalen
 			owns_core_province = 1758	# Hannover
 			owns_core_province = 1762	# Kassel
