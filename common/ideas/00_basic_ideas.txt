@@ -36,7 +36,7 @@ aristocracy_ideas = {
 		land_morale = 0.10
 	}
 	international_nobility = {
-		free_leader_pool = 3
+		free_leader_pool = 1
 	}
 
 	ai_will_do = {
@@ -259,7 +259,7 @@ innovativeness_ideas = {
 		war_exhaustion = -0.03
 	}
 	formalized_officer_corps = {
-		free_leader_pool = 3
+		free_leader_pool = 1
 	}
 
 	ai_will_do = {
@@ -328,6 +328,11 @@ religious_ideas = {
 economic_ideas = {
 	category = ADM
 
+	trigger = {
+		primitives = no
+		NOT = { has_idea_group = humanist_ideas }
+		}
+
 	bonus = {
 		development_cost = -0.10
 	}
@@ -343,7 +348,7 @@ economic_ideas = {
 		inflation_reduction = 0.1
 	}
 	debt_and_loans = {
-		interest = -0.5
+		interest = -0.25
 	}
 	centralization = {
 		max_states = 5
@@ -420,6 +425,11 @@ administrative_ideas = {
 
 humanist_ideas = {
 	category = ADM
+
+		trigger = {
+		primitives = no
+		NOT = { has_idea_group = economic_ideas }
+		}
 
 	bonus = {
 		development_cost = -0.10
@@ -539,7 +549,7 @@ spy_ideas = {
 		infantry_power = 0.15
 	}
 	strat_man = {
-		army_tradition = 1
+		army_tradition = 0.5
 		navy_tradition = 1
 	}
 	strat_shock = {
@@ -547,7 +557,7 @@ spy_ideas = {
 		local_years_of_nationalism = -5
 	}
 	state_propaganda = {
-		global_manpower_modifier = 0.25
+		global_manpower_modifier = 0.20
 	}
 	engineer_corps = {
 		siege_ability = 0.20
@@ -807,7 +817,7 @@ maritime_ideas = {
 
 	sea_hawks = {
 		navy_tradition = 1
-		free_leader_pool = 3
+		free_leader_pool = 1
 	}
 	merchant_marine = {
 		global_sailors_modifier = 0.5
@@ -889,7 +899,6 @@ naval_ideas = {
 	}
 	superior_seamanship = {
 		naval_morale = 0.1
-		global_naval_engagement_modifier = 0.1
 	}
 
 	ai_will_do = {
