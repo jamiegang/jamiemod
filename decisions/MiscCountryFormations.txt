@@ -10,8 +10,11 @@ country_decisions = {
 				ai = no
 				is_playing_custom_nation = no
 			}
-			Tag = DAN
-			Tag = Hes
+			OR = {
+				Tag = DAN
+				Tag = HES
+			}			
+
 			NOT = { tag = HLR }
 			NOT = { tag = PAP }
 			NOT = { tag = GER }
@@ -127,8 +130,11 @@ country_decisions = {
 				ai = no
 				is_playing_custom_nation = no
 			}
-			Tag = SWI
-			Tag = HES
+			OR = {
+				Tag = SWI
+				Tag = HES
+			}
+
 			NOT = { tag = HLR }
 			NOT = { tag = HAN }
 			NOT = { tag = PAP }
