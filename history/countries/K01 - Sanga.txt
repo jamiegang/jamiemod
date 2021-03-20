@@ -1,0 +1,10 @@
+government = monarchy
+add_government_reform = autocracy_reform
+technology_group = central_african
+primary_culture = kongolese
+religion = sunni
+religious_school = shafii_school
+capital = 4794 #Sango	
+
+
+1444.1.1 = { leader = {	name = "Nkunku"	type = general	fire = 4	shock = 5	manuever = 5	siege = 0	} }

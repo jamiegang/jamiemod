@@ -1,0 +1,16 @@
+name = "Sirhind Kashmir War of Honour"
+war_goal = {
+	type = take_core
+	casus_belli = cb_core
+	province = 4511 # Bhera
+}
+
+1444.1.1 = {
+	add_attacker = SRH
+	add_defender = KSH
+}
+
+1470.1.1 = {
+	rem_attacker = SRH
+	rem_defender = KSH
+}

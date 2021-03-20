@@ -1,0 +1,15 @@
+# - Bunia (New Province)
+culture = ganda
+religion = shamanism #Fetishism
+capital = "Bunia"
+hre = no
+base_tax = 2
+base_production = 2
+base_manpower = 3
+discovered_by = central_african
+is_city = yes
+add_core = BNY
+owner = BNY
+controller = BNY
+trade_goods = ivory
+hre = no

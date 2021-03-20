@@ -74,6 +74,15 @@
 
 declarewar = {
 	condition = {
+		tooltip = h_indian_cant_declare
+		potential = {
+			ROOT = { has_reform = b_pindari_bandits }
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
 		tooltip = h_tooltip_cn_declarewar
 		potential = {
 			is_colonial_nation = yes

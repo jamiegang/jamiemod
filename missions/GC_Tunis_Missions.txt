@@ -1,0 +1,446 @@
+tunis_expansion = {
+	slot = 1
+	ai = yes
+
+	potential = {
+		OR = {
+		tag = TUN
+		}
+	NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	tun_ottoman_diplo = {
+
+		icon = mission_ottoman_diplomacy
+		required_missions = {  }
+		
+		provinces_to_highlight = {
+			owned_by = TUR
+			is_capital = yes
+		}
+		
+		trigger = {	
+			OR = {
+				alliance_with = TUR
+				is_rival = TUR
+				NOT = { exists = TUR }
+			}
+		}
+		effect = {
+			358 = {
+				if = {
+					limit = {
+						NOT = {
+							is_permanent_claim = ROOT
+							is_core = ROOT
+						}
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+			cyrenaica_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	tun_alexandria = {
+	icon = mission_conquer_alexandria
+		required_missions = { tun_ottoman_diplo }
+		
+		provinces_to_highlight = {
+			OR = {
+				area = cyrenaica_area
+				province_id = 358
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			358 = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			cyrenaica_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					has_dlc = "Dharma"
+					358 = {
+						NOT = {
+							province_has_center_of_trade_of_level = 3
+						}
+					}
+				}
+				358 = {
+					add_center_of_trade_level = 1
+				}
+			}
+			else = {
+				358 = {
+					add_province_modifier = {
+						name = "tun_restoration_of_alexandra"
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+	
+	tun_artof_religion = {
+		icon = mission_patronize_art_and_religion
+		required_missions = { tun_alexandria tunis_faith }
+		
+		provinces_to_highlight = {
+			province_id = 358
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = {
+					OR = {
+						has_building = temple
+						has_building = cathedral
+					}
+				}
+				NOT = { has_building = university }
+			}
+		}
+		
+		trigger = {
+			358 = {
+				owned_by = ROOT
+				OR = {
+					has_building = temple
+					has_building = cathedral
+				}
+			}
+			religious_unity = 1
+			num_accepted_cultures = 2
+		}
+		effect = {
+			add_prestige = 20
+			if = {
+				limit = {
+					religion_group = muslim
+					piety = 1
+				}
+				add_piety = 0.75
+			}
+			else_if = {
+				limit = {
+					religion_group = muslim
+					NOT = { piety = 1 }
+				}
+				add_piety = 0.75
+			}
+		}
+	}
+}
+tunis_religion = {
+	slot = 2
+	generic = no
+	ai = yes
+
+	potential = {
+		OR = {
+		tag = TUN
+		}
+	NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+		tunis_stable_leadership = {
+			icon = mission_mosque
+			required_missions = { }
+	
+		trigger = {
+			NOT = { num_of_rebel_controlled_provinces = 1 }
+			stability = 1
+		}
+		effect = {
+			add_prestige = 20
+			add_dip_power = 100
+		}
+	}
+	tunis_faith = {
+		icon = mission_mosque
+		required_missions = { tunis_stable_leadership }
+		
+		trigger = {
+			piety = 0.5
+			}
+		effect = {
+		add_country_modifier = {
+				name = "tunis_morale"
+				duration = 7300
+				}
+			}
+		}
+	tunis_wise_leaders = {
+	icon = mission_restore_faith_in_the_throne
+	required_missions = { tunis_faith }
+	
+		trigger = {
+			AND = {
+			ADM = 3
+			DIP = 3
+			MIL = 3
+			}
+		}
+		effect = {
+			add_adm_power = 100
+			add_dip_power = 100
+			add_mil_power = 100
+		}
+	}
+	tunis_construction = {
+	icon = mission_mosque
+	required_missions = { tunis_wise_leaders }
+	
+		provinces_to_highlight = {
+			province_id = 4566
+			province_id = 341
+			province_id = 2473
+			}
+		
+		trigger = {
+			4566 = {
+				has_building = temple
+				has_building = cathedral
+				}
+			341 = {
+				has_building = temple
+				has_building = cathedral
+				}
+			2473 = {
+				has_building = temple
+				has_building = cathedral
+				}
+				piety = 0.75
+				unrest = -2
+			}
+		effect = {
+			4566 = {
+			add_base_tax = 2
+			add_base_manpower = 2
+			}
+			341 = {
+			add_base_tax = 2
+			add_base_manpower = 2
+			}
+			2473 = {
+			add_base_tax = 2
+			add_base_manpower = 2
+			}
+			add_treasury = 400
+		}
+	}
+}
+tunis_colonial = {
+	slot = 3
+	generic = no
+	ai = yes
+
+	potential = {
+		OR = {
+		tag = TUN
+		}
+	NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+
+	tunis_canaries = {
+		icon = mission_claim_the_canaries
+		required_missions = {  }
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 366
+				province_id = 4565
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			num_of_explorers = 1
+			}
+		
+		effect = {
+			4565 = {
+			limit = {
+					NOT = { is_permanent_claim = ROOT	}
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+			366 = {
+			limit = {
+					NOT = { is_permanent_claim = ROOT	}
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+			add_country_modifier = {
+				name = "mor_beyond_the_canaries"
+				duration = 7300
+			}
+		}
+	}
+	tunis_brazil = {
+		icon = mission_colonize_the_west
+		required_missions = { tunis_canaries }
+		
+		provinces_to_highlight = {
+			colonial_region = colonial_brazil
+			OR = {
+				is_city = no
+				NOT = { owned_by = ROOT }
+			}
+			has_discovered = ROOT
+		}
+		
+		trigger = {
+			if = {
+				limit = {
+					is_random_new_world = no
+				}
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 10
+					colonial_region = colonial_brazil
+					is_city = yes
+				}
+			}
+			else = {
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 10
+					continent = new_world
+					is_city = yes
+				}
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = "mor_colonized_brazil"
+				duration = 7300
+			}
+		}
+	}
+	tunis_new_world = {
+		icon = mission_new_world_power
+		required_missions = { tunis_brazil }
+		
+		provinces_to_highlight = {
+			OR = {
+				colonial_region = colonial_the_carribean
+				colonial_region = colonial_colombia
+			}
+			OR = {
+				is_city = no
+				NOT = { owned_by = ROOT }
+			}
+			has_discovered = ROOT
+		}
+		
+		trigger = {
+			if = {
+				limit = {
+					is_random_new_world = no
+				}
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 10
+					colonial_region = colonial_the_carribean
+					is_city = yes
+				}
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 10
+					colonial_region = colonial_colombia
+					is_city = yes
+				}
+				custom_trigger_tooltip = {
+					tooltip = mor_big_colony.tooltip
+					any_country = {
+						is_subject_of = ROOT
+						is_subject_of_type = colony
+						num_of_cities = 25
+					}
+				}
+			}
+			else = {
+				custom_trigger_tooltip = {
+					tooltip = mor_big_colony.tooltip
+					any_country = {
+						is_subject_of = ROOT
+						is_subject_of_type = colony
+						num_of_cities = 25
+					}
+				}
+			}
+		}
+		
+		effect = {
+			add_mercantilism = 3
+			add_country_modifier = {
+				name = "mor_new_world_power"
+				duration = -1
+			}
+		}
+	}
+}
+tunis_reforms = {
+	slot = 4
+	generic = no
+	ai = yes
+
+	potential = {
+		OR = {
+		tag = TUN
+		}
+	NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	tunis_economical = {
+	icon = mission_dominate_home_trade_node
+	required_missions = { }
+		
+		trigger = {
+			grown_by_development = 40 
+			share_of_starting_income = 1.5 
+			}
+		effect = {
+			add_treasury = 400
+			add_mercantilism = 3
+			add_country_modifier = {
+				name = "tunis_economics"
+				duration = 7300
+			}
+		}
+	}
+	tunis_ivory = {
+	icon = mission_into_africa
+	required_missions = { tunis_economical }
+	
+		trigger = {
+			 share_of_starting_income = 1.75 
+			 treasury = 1000 
+			353 = {
+				development = 10
+				}
+			}
+		effect = {
+		353 = {
+			NOT = { trade_goods = ivory }
+				change_trade_goods = ivory		
+				add_base_production = 2
+			}
+		}
+	}
+}

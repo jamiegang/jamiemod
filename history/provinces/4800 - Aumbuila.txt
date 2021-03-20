@@ -1,0 +1,15 @@
+# - Aumbuila (New Province)
+owner = KIK
+controller = KIK 
+culture = luba
+religion = shamanism #Fetishism
+capital = "Aumbuila"
+trade_goods = gems
+hre = no
+base_tax = 3
+base_production = 4
+base_manpower = 1
+is_city = yes
+add_core = KIK
+discovered_by = central_african
+

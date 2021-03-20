@@ -1,0 +1,2 @@
+X02 = "countries/Carthage.txt"
+R01 = "countries/Kitara.txt"

@@ -1,0 +1,15 @@
+# - Butembo (New Province)
+culture = ganda
+religion = shamanism #Fetishism
+capital = "Butembo"
+hre = no
+base_tax = 1
+base_production = 3
+base_manpower = 2
+discovered_by = central_african
+is_city = yes
+add_core = NKO
+owner = NKO
+controller = NKO 
+trade_goods = gold
+hre = no

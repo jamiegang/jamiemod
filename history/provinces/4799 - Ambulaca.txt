@@ -1,0 +1,19 @@
+# - Ambulaca (New Province)
+owner = LUB
+controller = LUB 
+culture = luba
+religion = shamanism #Fetishism
+capital = "Sango"
+trade_goods = gems
+hre = no
+base_tax = 3
+base_production = 4
+base_manpower = 1
+is_city = yes
+add_core = LUB
+discovered_by = central_african
+
+add_permanent_province_modifier = {
+	name = gems_ambulaca
+	duration = -1
+}

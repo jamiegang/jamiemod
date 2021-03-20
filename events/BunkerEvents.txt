@@ -1,0 +1,99 @@
+namespace = carthevent
+
+#########################################
+#										#
+#			The Bunker events			#
+#										#
+#########################################
+
+
+#############################################
+#     CARTHAGE EVENTS - BUNKER BALANCE      #
+#############################################
+
+#2458 - Gold Mine
+country_event = {
+	id = bunker.1
+	title = bunker.1.t
+	desc = bunker.1.d
+	picture = COURT_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		owns = 2458 #Kabylia
+		
+		2458 = {
+			NOT = { trade_goods = gold }
+		}
+		
+	}
+	
+	mean_time_to_happen = {
+		months = 2
+	}
+	
+	option = {
+		name = bunker.1.a
+		2458 = {
+			change_trade_goods = gold		
+			add_base_production = 2
+		}
+	}
+}
+
+
+# Hungary Integrates Croatia
+country_event = {
+	id = bunker.3
+	title = bunker.3.t
+	desc = bunker.3.d
+	picture = COURT_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = HUN
+		is_year = 1454
+	}
+	mean_time_to_happen = {
+		months = 2
+	}
+	
+	option = {
+		name = bunker.3.a
+		inherit = CRO
+	}
+}
+
+# Every Country gets manpower and merc manpower
+country_event = {
+	id = bunker.4
+	title = bunker.4.t
+	desc = bunker.4.d
+	picture = COURT_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		was_player = yes
+		is_year = 1444
+	}
+	mean_time_to_happen = {
+		months = 1
+	}
+	option = {
+		name = bunker.4.a
+		
+		create_general = {
+				tradition = 45
+				}
+				
+		add_manpower = 10
+		
+		add_country_modifier = {
+			name = player_manpower
+			duration = 7300
+		}
+	}
+}

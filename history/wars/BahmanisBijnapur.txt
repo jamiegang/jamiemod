@@ -1,0 +1,16 @@
+name = "Bahmanis Reconquest of Dohban"
+war_goal = {
+	type = take_core
+	casus_belli = cb_core
+	province = 2089 # Chaul
+}
+
+1444.1.1 = {
+	add_attacker = BAH
+	add_defender = BIJ
+}
+
+1470.1.1 = {
+	rem_attacker = BAH
+	rem_defender = BIJ
+}

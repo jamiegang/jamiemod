@@ -1,5 +1,5 @@
 government = republic
-add_government_reform = oligarchy_reform
+add_government_reform = united_cantons_reform
 government_rank = 1
 technology_group = western
 religion = catholic
@@ -16,18 +16,6 @@ add_army_professionalism = 0.1
 		mil = 3
 		regent = yes
 	}
-}
-
-1444.1.1 = {
-	monarch = {
-		name = "Wolfhart Brandis"
-		birth_date = 1415.11.14 #1408
-		adm = 5
-		dip = 5
-		mil = 5
-	}
-	clear_scripted_personalities = yes
-	add_ruler_personality = careful_personality
 }
 
 1528.1.1 = { religion = reformed }

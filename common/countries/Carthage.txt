@@ -37,47 +37,32 @@ historical_units = {
 }
 
 monarch_names = {
-	"Dido #6" = -10
+	"Dido #6" = -2
 	"Hanno #4" = 5
 	"Malchus #8" = 5
 	"Hamilcar #9" = 10
-	"Magonids #2" = 0
 	"Hasdrubal #6" = 5
-	"Hannibal #11" = 10
-	"Himilco #5" = 0
-	"Mago #5" = 0
-	"Hanno #4" = 0
-	"Hannonian #4" = 0
-	"Gisco #5" = 0
-	"Bomilcar #3" = 0
+	"Hannibal #11" = 5
+	"Himilco #5" = 2
+	"Mago #5" = 2
+	"Hanno #4" = 2
+	"Gisco #5" = 2
+	"Bomilcar #3" = 2
+	"Heroditus #1" = 2
+	"Bodo #3" = 2
+	"Carthalo #1" = 2
+	"Sophonisba #1" = -4
+	"Absalon #1" = 2
+	"Melqart #1" = 2
+	"Hannimelqart #1" = 2
 }
 
+
 leader_names = { 
-	Akropolites Angelos Aoinos Apokaukos Argyros
-	Basileous Batatzes Botaneiates Boumbalis
-	Choniates Choumnos
-	Diasorenos Diogenes Doukas
-	Gabras
-	Iagaris
-	Kantakuzenos Kaukadenos Komnenos
-	Laskaris
-	Melissinos Melisurgos Mikrulakes Monomakos Mouzalon
-	Nestongos
-	Palaiologos Paraspondylos Phocas Phouskarnaki Phrangopoulos Psellos
-	Rhadinos Rhangabe Rhodocanakis Romanos
-	Syropoulos
-	Tornikes
-	Zarides Zimisces
-	Taher
-	Akimi
-	Adhoum
-	Hakimi
-	Naybet
-	Bassir
-	Saber
-	Badra
-	Sassi
-	Dali
+	Barcid
+	Hannonian
+	Magonid
+	Didonian
 }
 
 ship_names = {

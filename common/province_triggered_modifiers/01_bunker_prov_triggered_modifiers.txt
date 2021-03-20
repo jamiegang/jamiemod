@@ -1,0 +1,95 @@
+#############################################
+#    CUSTOM MODIFIERS - BUNKER BALANCE      #
+#############################################
+
+b_silk_damascus = {
+
+	potential = {
+			normal_or_historical_nations = yes
+	}
+	trigger = {
+			tag = MAM 
+		}
+		
+	local_trade_goods_size_modifier = 0.5
+	
+	on_activation = {
+	}
+	on_deactivation = {
+	}
+
+}
+### INDIA CHANGES
+h_iwonder_idar = {
+	potential = {
+		normal_or_historical_nations = yes
+	}
+	trigger = {
+		is_core = ROOT
+	}
+	land_attrition -0.10
+	movement_speed = 0.10
+	#Province scope
+	on_activation = {
+	}
+	on_deactivation = {
+	}
+}
+
+h_iwonder_mewat = {
+	potential = {
+		normal_or_historical_nations = yes
+	}
+	trigger = {
+		is_core = ROOT
+	}
+	army_tradition = 0.5
+	#Province scope
+	on_activation = {
+	}
+	on_deactivation = {
+	}
+}
+
+h_iwonder_mysore = {
+	potential = {
+		normal_or_historical_nations = yes
+	}
+	trigger = {
+		is_core = ROOT
+	}
+	infantry_power = 0.05
+	#Province scope
+	on_activation = {
+	}
+	on_deactivation = {
+	}
+}
+h_iwonder_bengal = {
+	potential = {
+		normal_or_historical_nations = yes
+	}
+	trigger = {
+		is_core = ROOT
+	}
+	trade_efficiency = 0.05
+	#Province scope
+	on_activation = {
+	}
+	on_deactivation = {
+	}
+}
+h_iwonder_berar = {
+	potential = {
+		normal_or_historical_nations = yes
+	}
+	trigger = {
+		is_core = ROOT
+	}
+	idea_cost = -0.05
+	#Province scope
+	on_activation = {
+	}
+	on_deactivation = {
+	}
+}

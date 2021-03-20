@@ -1,0 +1,282 @@
+kitara_missions_1 = { #Kitara Consolodation
+	slot = 1	
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+		tag = R01
+		}
+	NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	kitara_consolodation = {
+		icon = mission_conquer_50_development
+		required_missions = { }
+		
+		trigger = {
+		
+			4802 = {
+			province_has_center_of_trade_of_level = 2
+			NOT = { province_has_center_of_trade_of_level = 3 }
+			has_building = marketplace
+			owned_by = ROOT
+			}
+		}
+		effect = {
+			
+			4802 = {
+				add_center_of_trade_level = 1
+			}
+			4064 = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT	}
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+			add_mercantilism = 5
+			add_treasury = 200
+		
+		}
+		
+	}
+	kitara_military = {
+		icon = mission_african_soldier
+		required_missions = { kitara_consolodation }
+		
+		trigger = {
+			army_size = 40
+			AND = {
+			MIL = 4
+			}
+		}
+		effect = {
+		add_mil_power = 100
+		add_country_modifier = {
+				name = "kitara_prof"
+				duration = 7300
+				}
+		
+		}
+	}
+	kitara_development = {
+		icon = mission_colonial
+		required_missions = { kitara_military }
+		
+		trigger = {
+			4803 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			grown_by_development = 75
+			
+		}
+		effect = {
+			4803 = {
+			add_base_production = 2
+			add_base_tax = 2
+			add_base_manpower = 2
+			}
+		if = {
+				limit = {
+					4804 = {
+						is_empty = yes
+					}
+				}
+				4804 = {
+					add_core = ROOT
+					cede_province = ROOT
+					NOT = { trade_goods = paper }
+					change_trade_goods = paper		
+					add_base_production = 2
+				}
+			}
+				add_country_modifier = {
+				name = "kitara_development"
+				duration = 7300
+				}
+			}
+		}
+	kitara_united = {
+		icon = mission_trade_in_gold_coast
+		required_missions = { kitara_development }
+		
+		trigger = {
+			NOT = { exists = BNY }
+			NOT = { exists = BUG }
+			
+			4064 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					4805 = {
+						is_empty = yes
+					}
+				}
+				4805 = {
+					add_core = ROOT
+					cede_province = ROOT	
+					add_base_production = 2
+				}
+			}
+			if = {
+				limit = {
+					4806 = {
+						is_empty = yes
+					}
+				}
+				4806 = {
+					add_core = ROOT
+					cede_province = ROOT	
+					add_base_production = 2
+				}
+			}
+			capital_scope = {
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+				area = {
+					limit = { owned_by = ROOT }
+					add_province_modifier = {
+						name = "growth_of_capital"
+						duration = 7300 
+					}
+				}
+			}
+			
+		}
+	
+	}
+}
+kitara_missions_2 = { #Kitara expansion
+	slot = 5	
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+		tag = R01
+		}
+	NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	kitara_united = {
+		icon = mission_have_two_subjects
+		required_missions = {  }
+	
+		trigger = {
+			NOT = { exists = BNY }
+			NOT = { exists = BUG }
+			NOT = { exists = NKO }
+			
+			total_development = 175
+		}
+		effect = {
+			add_prestige = 30
+			add_country_modifier = {
+				name = "imperial_ambition"
+				duration = 9125
+			}
+			add_manpower = 20
+			define_advisor = {
+				type = army_reformer
+				skill = 3
+				culture = ROOT
+				religion = ROOT
+				cost_multiplier = 0.5
+			}
+		}
+	
+	}
+	kitara_kenya = {
+		icon = mission_bedouins
+		required_missions = { kitara_united }
+		
+		trigger = {
+			army_size_percentage = 1
+			manpower_percentage = 0.6
+			num_of_generals = 1
+		}
+		effect = {
+			if = {
+				limit = {
+					4053 = {
+						is_empty = yes
+					}
+				}
+				4053 = {
+					add_core = ROOT
+					cede_province = ROOT	
+				}
+			}
+			if = {
+				limit = {
+					4060 = {
+						is_empty = yes
+					}
+				}
+				4060 = {
+					add_core = ROOT
+					cede_province = ROOT	
+				}
+			}
+			if = {
+				limit = {
+					1925 = {
+						is_empty = yes
+					}
+				}
+				1925 = {
+					add_core = ROOT
+					cede_province = ROOT	
+
+				}
+			}
+			if = {
+				limit = {
+					1273 = {
+						is_empty = yes
+					}
+				}
+				1273 = {
+					add_core = ROOT
+					cede_province = ROOT	
+				}
+			}
+			if = {
+				limit = {
+					4054 = {
+						is_empty = yes
+					}
+				}
+				4054 = {
+					add_core = ROOT
+					cede_province = ROOT	
+				}
+			}
+			if = {
+				limit = {
+					4059 = {
+						is_empty = yes
+					}
+				}
+				4059 = {
+					add_core = ROOT
+					cede_province = ROOT	
+				}
+			}
+			mombasa_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT	}
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+}

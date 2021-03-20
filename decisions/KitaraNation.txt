@@ -1,0 +1,60 @@
+country_decisions = {
+	revive_kitara = {
+		major = yes
+		potential = {
+		
+			tag = RWA
+			normal_or_historical_nations = yes
+			NOT = { has_country_flag = formed_kitara_flag}
+			NOT = { exists = R01}
+			}
+	provinces_to_highlight = {
+			OR = {
+				province_id = 4067 # 
+				province_id = 4802 # 
+				province_id = 4069 #
+				province_id = 4070 #
+				
+			}
+			NOT = { owned_by = ROOT }
+		}
+		allow = {
+			adm_tech = 6
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			is_at_war = no
+			owns_core_province =  4067
+			owns_core_province =  4802
+			owns_core_province =  4069 
+			owns_core_province =  4070 	
+		}
+	effect = {
+			change_tag = R01
+			swap_non_generic_missions = yes
+			add_prestige = 25
+			set_country_flag = formed_kitara_flag
+			add_country_modifier = {
+			name = "centralization_modifier"
+				duration = 7300
+			}
+				
+			if = {
+				limit = {
+					NOT = { government_rank = 1 }
+				}
+				set_government_rank = 3
+			}
+			if = {
+                limit = { has_custom_ideas = no }
+                country_event = { id = ideagroups.1 } #Swap Ideas
+            }
+				
+			4802 = {
+				add_base_tax = 3
+				add_base_production = 3
+				add_base_manpower = 3
+			}
+	
+		}
+	}
+}

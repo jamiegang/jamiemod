@@ -1,0 +1,13 @@
+# - Emfaca (New Province)
+culture = kongolese
+capital = "Emfaca"
+hre = no
+base_tax = 3
+base_production = 4
+base_manpower = 2
+is_city = yes
+religion = shamanism #Fetishism
+
+discovered_by = central_african
+
+

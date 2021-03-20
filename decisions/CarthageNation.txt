@@ -4,21 +4,15 @@ country_decisions = {
 		major = yes
 		potential = {
 			normal_or_historical_nations = yes
-			NOT = { tag = HLR }
-			NOT = { tag = PAP }
-			NOT = { tag = TUR }
-			NOT = { tag = MAM }
-			NOT = { tag = X01 }
-			NOT = { tag = X02 }
+			
 			NOT = { has_country_flag = formed_carthage_flag}
-			NOT = { government = celestial_empire }
+			NOT = { exists = X02}
+			
 			OR = {
 				primary_culture = moroccan
 				primary_culture = tunisian
-				primary_culture = algerian
-				primary_culture = berber
 			}
-			is_colonial_nation = no
+
 			OR = {
 				is_former_colonial_nation = no
 				AND = {
@@ -26,40 +20,28 @@ country_decisions = {
 					ai = no
 				}
 			}
-			OR = {
-				tag = MOR
-				tag = TUN
-				tag = NAP
-			}
+			
 		}
+		
 		provinces_to_highlight = {
 			OR = {
 				province_id = 341 # Tunis
-				province_id = 2455 #  Bizerte 	
-				province_id = 2473 #  Sousse
-				province_id = 2454 #  Kef
-				province_id = 125 #  Palermo
-				province_id = 126 #  Malta
-				province_id = 2986 #  Cagliari 
+				province_id = 4792 # Tizi Ouzou
 			}
 			NOT = { owned_by = ROOT }
 		}
 		allow = {
-			adm_tech = 10
+			adm_tech = 6
 			is_free_or_tributary_trigger = yes
 			is_nomad = no
 			is_at_war = no
 			owns_core_province =  341 # Tunis
-			owns_core_province =  2455 #  Bizerte 	
-			owns_core_province =  2473 #  Sousse
-			owns_core_province =  2454 #  Kef
-			owns_core_province =  125 #  Palermo
-			owns_core_province =  126 #  Malta
-			owns_core_province =  2986 #  Cagliari 
+			owns_core_province =  4792 # Tizi Ouzou
+			num_of_cities = 30
 		}
 		effect = {
 			change_tag = X02
-			swap_non_generic_missions = no
+			swap_non_generic_missions = yes
 			if = {
 				limit = {
 					is_part_of_hre = yes
@@ -85,7 +67,14 @@ country_decisions = {
 				}
 				set_government_rank = 2
 			}
-			
+			#setting tunis to carthage gov
+			if = {
+				limit = {
+					NOT = { government = republic }
+				}
+				change_government = republic
+			}
+			add_government_reform = carthage_reform
 			if = {
                 limit = { has_custom_ideas = no }
                 country_event = { id = ideagroups.1 } #Swap Ideas
@@ -99,44 +88,8 @@ country_decisions = {
 				
 			set_capital = 341
 				
-			define_heir = {
-				ADM = 5
-				DIP = 6
-				MIL = 4
-				dynasty = "Barca"
 			}
 				
-			tunisia_area = {
-				limit = {
-					NOT = { owned_by = ROOT }
-				}
-				add_permanent_claim = X02
-			}
-			djerba_area = {
-				limit = {
-					NOT = { owned_by = ROOT }
-				}
-				add_permanent_claim = X02
-			}
-			tripolitania_area = {
-				limit = {
-					NOT = {	owned_by = ROOT }
-				}
-				add_permanent_claim = X02
-			}
-			kabylia_area = {
-				limit = {
-					NOT = { owned_by = ROOT }
-				}
-				add_permanent_claim = X02
-			}
-			algiers_area = {
-				limit = {
-					NOT = { owned_by = ROOT }
-				}
-				add_permanent_claim = X02
-			}
 			set_country_flag = formed_carthage_flag
 		}
 	}
-}

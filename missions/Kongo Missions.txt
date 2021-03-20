@@ -1,0 +1,423 @@
+kongo_missions_1 = { #Secure the coast & Kongo proper
+	slot = 1	
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+		tag = KON
+		}
+	NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes	
+	
+	kongo_security = {
+		icon = mission_conquer_50_development
+		required_missions = { }
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4794	
+				}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+		4794 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		
+		effect = {
+			4794 = {
+				add_core = ROOT
+				province_has_center_of_trade_of_level = 1
+				NOT = { province_has_center_of_trade_of_level = 3 }
+			}
+			4794 = {
+				add_center_of_trade_level = 1
+			}
+			else = {
+				add_treasury = 200
+				}
+			4796 = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			4085 = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			matamba_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			kasai_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			add_mercantilism = 5
+		}
+	}
+	kongo_development = {
+		icon = mission_high_income
+		required_missions = { kongo_security }
+		
+		trigger = {
+		
+			4794 = {
+				has_building = marketplace
+				owned_by = ROOT
+				}
+			NOT = { num_of_rebel_controlled_provinces = 1 }
+			stability = 1
+		}
+		effect = {
+			add_country_modifier = {
+				name = "kongo_colonist"
+				duration = 7300
+				}
+			}
+		}
+	kongo_internal_development = {
+		icon = mission_colonial
+		required_missions = { kongo_development }
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1167
+				province_id = 4795
+				province_id = 1172				
+				}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			4795 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			1172 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			1167 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			4795 = {
+			add_base_tax = 2
+			add_base_manpower = 2
+			NOT = { trade_goods = ivory }
+				change_trade_goods = ivory		
+				add_base_production = 2
+			}
+			1172 = {
+			add_base_tax = 2
+			add_base_manpower = 2
+			NOT = { trade_goods = ivory }
+				change_trade_goods = ivory		
+				add_base_production = 2
+			}
+			1167 = {
+			add_base_tax = 2
+			add_base_manpower = 2
+			NOT = { trade_goods = ivory }
+				change_trade_goods = ivory		
+				add_base_production = 2
+			}
+			add_treasury = 400
+		}
+		
+	}
+	kongo_income = {
+		icon = mission_african_soldier
+		required_missions = { kongo_internal_development }
+	
+		trigger = {
+			grown_by_development = 125 
+			share_of_starting_income = 2.75
+			}
+		effect = {
+		
+		define_advisor = {
+				type = army_reformer
+				skill = 4
+				culture = ROOT
+				religion = ROOT
+				cost_multiplier = 0.25
+			}
+			add_adm_power = 100
+			add_dip_power = 100
+			add_mil_power = 100
+			add_manpower = 20
+		}	
+	}
+		
+	}
+kongo_missions_2 = { #Interior Expansion
+	slot = 5	
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+		tag = KON
+		}
+	NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	kongo_yaka_expansion = {
+	icon = mission_control_surat
+		required_missions = { }
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4085
+				province_id = 4796	
+				area = matamba_area	
+				area = kasai_area	
+				}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+		
+			4085 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			4796 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		
+			matamba_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			kasai_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		
+		}
+		
+		effect = {
+		add_country_modifier = {
+				name = "imperial_ambition"
+				duration = -1
+				}
+				
+		chokwe_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT	}
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+		sankuru_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT	}
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+		4088 = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT	}
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+		4086 = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT	}
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+		
+		}
+	
+	}
+	kongo_luba_border = {
+	icon = mission_conquer_benin
+		required_missions = { kongo_yaka_expansion }
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4086
+				province_id = 4088	
+				area = chokwe_area	
+				area = sankuru_area	
+				}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			4086 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			4088 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		
+			chokwe_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			sankuru_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		
+		effect = {
+			chokwe_area = {
+				add_province_modifier = {
+					name = kongo_interior
+					duration = 7300
+				}
+				
+			}		
+		
+		}
+	}
+	kongo_forts = {
+		icon = mission_conquer_tunisia
+		required_missions = { kongo_luba_border }
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4096
+				province_id = 4090	
+
+				}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	
+		trigger = {
+			4090 = {
+				has_building = fort_15th
+				owned_by = ROOT
+				}
+			4096 = {
+				has_building = fort_15th
+				owned_by = ROOT
+				}
+		NOT = { num_of_rebel_controlled_provinces = 1 }
+		stability = 1
+		}
+		
+		effect = {
+			luba_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT	}
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	kongo_luba_expansion = {
+		icon = mission_establish_the_black_guard
+		required_missions = { kongo_forts }
+		
+		provinces_to_highlight = {
+			OR = {
+				area = luba_area
+				}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			4097 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					4109 = {
+						is_empty = yes
+					}
+				}
+				4109 = {
+					add_core = ROOT
+					cede_province = ROOT
+				}
+			}
+			rwanda_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT	}
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+			buha_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT	}
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+			add_country_modifier = {
+				name = "army_enthusiasm"
+				duration = 7300
+				}
+			add_country_modifier = {
+				name = "kongo_colonist"
+				duration = 7300
+				}
+		}
+	}
+	kongo_interlacustrine = {
+	icon = mission_envoy_to_ethiopia
+		required_missions = { kongo_luba_expansion }
+		
+		provinces_to_highlight = {
+			OR = {
+				area = rwanda_area
+				area = buha_area
+				}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			rwanda_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			buha_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "kongo_warriors"
+				duration = -1
+				}
+			add_adm_power = 100
+			add_dip_power = 100
+			add_mil_power = 100
+			add_manpower = 20
+		}
+	}
+}

@@ -1,16 +1,15 @@
-# Bohemia - Silesia
-#vassal = {
-#	first = BOH
-#	second = SIL
-#	start_date = 1444.1.1
-#	end_date = 1526.8.29
-#}
-
-# Habsburg - Silesia
+# Burgundy - Champagne
 vassal = {
-	first = HAB
-	second = SIL
-	start_date = 1526.8.30
+	first = BUR
+	second = CHP
+	start_date = 1444.1.1
+	end_date = 1675.11.21
+}
+# Hungary - Croatia
+vassal = {
+	first = HUN
+	second = CRO
+	start_date = 1444.1.1
 	end_date = 1675.11.21
 }
 

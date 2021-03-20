@@ -2,6 +2,7 @@
 
 owner = KHO
 controller = KHO
+add_core = KHO
 culture = persian
 religion = shiite
 capital = "Savah"

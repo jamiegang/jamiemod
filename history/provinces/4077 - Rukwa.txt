@@ -1,0 +1,15 @@
+#4077 - Rukwa
+
+culture = bena
+religion = shamanism #Fetishism
+trade_goods = grain
+hre = no
+base_tax = 2
+base_production = 3
+base_manpower = 1
+capital = "Rukwa"
+is_city = yes
+add_core = UBH
+owner = UBH
+controller = UBH 
+discovered_by = central_african

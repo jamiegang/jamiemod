@@ -1,0 +1,81 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_holy_orders_button"
+		texturefile = "gfx/interface/holy_orders_button.dds"		
+	}
+	spriteType = {
+		name = "GFX_holy_order_jesuits"
+		texturefile = "gfx/interface/holy_orders/jesuits.dds"
+		noOfFrames = 4
+	}
+	spriteType = {
+		name = "GFX_holy_order_dominicans"
+		texturefile = "gfx/interface/holy_orders/dominicans.dds"
+		noOfFrames = 4
+	}
+	spriteType = {
+		name = "GFX_holy_order_franciscans"
+		texturefile = "gfx/interface/holy_orders/franciscans.dds"
+		noOfFrames = 4
+	}
+	spriteType = {
+		name = "GFX_holy_order_shadhili"
+		texturefile = "gfx/interface/holy_orders/Shadhili.dds"
+		noOfFrames = 4
+	}
+	spriteType = {
+		name = "GFX_holy_order_qadiri"
+		texturefile = "gfx/interface/holy_orders/Qadiri.dds"
+		noOfFrames = 4
+	}
+	spriteType = {
+		name = "GFX_holy_order_aissawa"
+		texturefile = "gfx/interface/holy_orders/Aissawa.dds"
+		noOfFrames = 4
+	}
+	spriteType = {
+		name = "GFX_holy_order_carmelite"
+		texturefile = "gfx/interface/holy_orders/Carmelite.dds"
+		noOfFrames = 4
+	}
+	spriteType = {
+		name = "GFX_holy_order_carthusian"
+		texturefile = "gfx/interface/holy_orders/Carthusian.dds"
+		noOfFrames = 4
+	}
+	spriteType = {
+		name = "GFX_holy_order_augustine"
+		texturefile = "gfx/interface/holy_orders/Augustine.dds"
+		noOfFrames = 4
+	}
+	spriteType = {
+		name = "GFX_holy_order_benedictine"
+		texturefile = "gfx/interface/holy_orders/Benedictine.dds"
+		noOfFrames = 4
+	}
+	spriteType = {
+		name = "GFX_holy_order_cistercian"
+		texturefile = "gfx/interface/holy_orders/Cistercian.dds"
+		noOfFrames = 4
+	}
+	spriteType = {
+		name = "GFX_holy_order_premon"
+		texturefile = "gfx/interface/holy_orders/Premonstratensia.dds"
+		noOfFrames = 4
+	}
+	spriteType = {
+		name = "GFX_holy_order_pauline"
+		texturefile = "gfx/interface/holy_orders/Pauline.dds"
+		noOfFrames = 4
+	}
+	spriteType = {
+		name = "GFX_holy_order_servite"
+		texturefile = "gfx/interface/holy_orders/Servite.dds"
+		noOfFrames = 4
+	}
+	spriteType = {
+		name = "GFX_holy_order_bridgettine"
+		texturefile = "gfx/interface/holy_orders/Bridgettine.dds"
+		noOfFrames = 4
+	}
+}

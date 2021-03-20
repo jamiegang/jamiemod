@@ -1,0 +1,959 @@
+#############################################
+#     Merc Rework 2021 - BUNKER BALANCE     #
+#############################################
+# Includes Unique mercs for each religion, Slotted country, Government Reform & default mercs 
+#  Triggers:
+#  has_reform = 
+#  total_development = 
+#  tag = 
+#  religion =  , religion_group =  , 
+#  NOT = {	current_age = age_of_discovery } , current_age = age_of_discovery
+# Has ideas filled
+# is_emperor = yes , is_part_of_hre = yes
+#############################################
+#     Merc Rework 2021 - Default Mercs      #
+#############################################
+#Large Company
+bm_regional_large_1 = {
+
+	regiments_per_development = 0.045
+	cavalry_weight = 0.0
+	artillery_weight = 0.0
+	cost_modifier = 1
+	trigger = {
+		total_development = 750
+	}
+	modifier = {
+	reinforce_speed = -0.15
+    recover_army_morale_speed = -0.05
+	}
+}
+
+#Medium Comapany 1
+bm_regional_medium_1 = {
+
+	regiments_per_development = 0.03
+	cavalry_weight = 0.0
+	artillery_weight = 0.0
+	cost_modifier = 1
+	trigger = {
+		total_development = 150
+	}
+	modifier = {
+	}
+}
+
+#Medium Company 2 (Reformation Mercs)
+bm_regional_medium_2 = {
+
+	regiments_per_development = 0.0325
+	cavalry_weight = 0.0
+	artillery_weight = 0.0
+	cost_modifier = 1
+	trigger = {
+		NOT = {	current_age = age_of_discovery }
+	}
+	modifier = {
+	}
+}
+
+#Medium Company 3 (Absolutism Mercs)
+bm_regional_medium_3 = {
+regiments_per_development = 0.035
+	cavalry_weight = 0.0
+	artillery_weight = 0.0
+	cost_modifier = 1
+	trigger = {
+		current_age = age_of_absolutism
+	}
+	modifier = {
+	}
+}
+
+#Medium Company 4 (Revolutions Mercs)
+bm_regional_medium_4 = {
+regiments_per_development = 0.0375
+	cavalry_weight = 0.0
+	artillery_weight = 0.0
+	cost_modifier = 1
+	trigger = {
+		current_age = age_of_revolutions
+	}
+	modifier = {
+	}
+}
+
+#Small Company 1 of 4
+bm_regional_small_1 = {
+	
+	regiments_per_development = 0.0175
+	cavalry_weight = 0.0
+	artillery_weight = 0.0
+	cost_modifier = 1
+	trigger = {
+		was_player = yes
+	}
+	modifier = {
+	}
+
+}
+#Small Company 2 of 4
+bm_regional_small_2 = {
+	
+	regiments_per_development = 0.0225
+	cavalry_weight = 0.0
+	artillery_weight = 0.0
+	cost_modifier = 1
+	trigger = {
+		was_player = yes
+		NOT = {	current_age = age_of_discovery }
+	}
+	modifier = {
+	}
+
+}
+#Small Company 3 of 3
+bm_regional_small_3 = {
+	
+	regiments_per_development = 0.025
+	cavalry_weight = 0.0
+	artillery_weight = 0.0
+	cost_modifier = 1
+	trigger = {
+		was_player = yes
+		current_age = age_of_discovery
+	}
+	modifier = {
+	}
+
+}
+#############################################
+#     Merc Rework 2021 - Gov Reforms        #
+#############################################
+
+#Medium Company for Anti-Nobility
+bm_government_medium_1 = {
+	
+	regiments_per_development = 0.03
+	cavalry_weight = 0.0
+	artillery_weight = 0.0
+	cost_modifier = 1
+	trigger = {
+		has_reform = quash_noble_power_reform
+	}
+	modifier = {
+		reinforce_speed = -0.15
+		recover_army_morale_speed = -0.05
+	}
+}
+#Small Company for Peasant Republics
+bm_government_small_1 = {
+	
+	regiments_per_development = 0.0195
+	cavalry_weight = 0.0
+	artillery_weight = 0.0
+	cost_modifier = 1
+	trigger = {
+		has_reform = peasants_republic
+	}
+	modifier = {
+		movement_speed = 0.1
+	}
+}
+#Small Company for Ambrosian Republics
+bm_government_small_2 = {
+
+	regiments_per_development = 0.0195
+	cavalry_weight = 0.0
+	artillery_weight = 0.0
+	cost_modifier = 1
+	trigger = {
+		has_reform = ambrosian_republic
+	}
+	modifier = {
+		infantry_power = 0.05
+	}
+}
+#Medium Company for Carthaginian Republics
+bm_government_medium_2 = {
+
+	regiments_per_development = 0.035
+	cavalry_weight = 0.0
+	artillery_weight = 0.0
+	cost_modifier = 1
+	trigger = {
+		has_reform = carthage_reform
+	}
+	modifier = {
+		shock_damage_received = -0.1
+	}
+}
+#Medium Company for HRE Emperor
+bm_government_medium_3 = {
+	
+	regiments_per_development = 0.025
+	cavalry_weight = 0.0
+	artillery_weight = 0.0
+	cost_modifier = 1
+	trigger = {
+		is_emperor = yes 
+		is_part_of_hre = yes
+	}
+	modifier = {
+		infantry_power = 0.05
+        discipline = 0.025
+	}
+}
+#Small Company for Swiss Government
+bm_government_small_3 = {
+
+	regiments_per_development = 0.02
+	cavalry_weight = 0.0
+	artillery_weight = 0.0
+	cost_modifier = 1
+	trigger = {
+		has_reform = united_cantons_reform
+	}
+	modifier = {
+		infantry_power = 0.05
+        discipline = 0.025
+	}
+}
+#############################################
+#     Merc Rework 2021 - Religious Mercs    #
+#############################################
+
+#Small Orthodox Zealots 
+bm_religious_small_1 = {
+	
+	regiments_per_development = 0.0185
+	cavalry_weight = 0.26
+	artillery_weight = 0.0
+	cost_modifier = 1
+	sprites = { easterngfx_sprite_pack }
+	trigger = {
+		religion = orthodox
+	}
+	modifier = {
+		cavalry_power = 0.1
+	}
+}
+#Small Catholic Zealots
+bm_religious_small_2 = {
+
+	regiments_per_development = 0.0175
+	cavalry_weight = 0.1
+	artillery_weight = 0.0
+	cost_modifier = 1
+	sprites = { westerngfx_sprite_pack }
+	trigger = {
+		religion = catholic
+	}
+	modifier = {
+		fire_damage_received = -0.1
+	}
+}
+#Medium Protestant Zealots
+bm_religious_medium_1 = {
+		
+	regiments_per_development = 0.0275
+	cavalry_weight = 0.2
+	cavalry_cap = 4
+	artillery_weight = 0.0
+	cost_modifier = 1
+	sprites = { westerngfx_sprite_pack }
+	trigger = {
+		religion = protestant
+	}
+	modifier = {
+		infantry_power = 0.1
+	}
+}
+#Small Reformed Zealots
+bm_religious_small_3 = {
+
+	regiments_per_development = 0.02
+	cavalry_weight = 0.1
+	cavalry_cap = 4
+	artillery_weight = 0.0
+	cost_modifier = 1
+	sprites = { westerngfx_sprite_pack }
+	trigger = {
+		religion = reformed
+	}
+	modifier = {
+		fire_damage_received = -0.1
+	}
+}
+#Small Anglican Zealots
+bm_religious_small_4 = {
+
+	regiments_per_development = 0.0185
+	cavalry_weight = 0.1
+	cavalry_cap = 4
+	artillery_weight = 0.0
+	cost_modifier = 1
+	sprites = { westerngfx_sprite_pack }
+	trigger = {
+		religion = anglican
+	}
+	modifier = {
+		discipline = 0.5
+	}
+}
+#Small Muslim Jihadis
+bm_religious_small_5 = {
+	regiments_per_development = 0.0195
+	cavalry_weight = 0.25
+	cavalry_cap = 4
+	artillery_weight = 0.0
+	cost_modifier = 1
+	sprites = { dlc080_shm_sprite_pack muslimgfx_sprite_pack }
+	trigger = {
+		religion_group = muslim
+	}
+	modifier = {
+		cavalry_power = 0.1
+	}
+}
+#Small Indian Core
+bm_religious_small_6 = {
+	
+	regiments_per_development = 0.022
+	cavalry_weight = 0.20
+	cavalry_cap = 4
+	artillery_weight = 0.0
+	cost_modifier = 1
+	sprites = { dlc080_shm_sprite_pack muslimgfx_sprite_pack }
+	trigger = {
+		capital_scope = {
+				OR = {
+					superregion = india_superregion
+				}
+			}
+	}
+	modifier = {
+		land_attrition = -0.15
+	}
+}
+#############################################
+#     Merc Rework 2021 - Country Mercs      #
+#############################################
+#ENG
+bm_country_eng = {
+    regiments_per_development = 0.04
+	cavalry_weight = 0.0
+	artillery_weight = 0.0
+	cost_modifier = 0.75
+	sprites = { dlc049_ENG_sprite_pack dlc042_eng_sprite_pack dlc028_eng_sprite_pack eng_base_sprite_pack }
+    trigger = { 
+		tag = ENG
+	}
+	modifier = {
+		land_morale = 0.10
+	}
+}
+#FRA
+bm_country_fra = {
+	regiments_per_development = 0.04
+	cavalry_weight = 0.0
+	artillery_weight = 0.0
+	cost_modifier = 0.75
+	sprites = { dlc001_amg_sprite_pack dlc049_FRA_sprite_pack dlc028_fra_sprite_pack dlc054_fra_sprite_pack fra_base_sprite_pack }
+    trigger = { 
+		tag = FRA
+	}
+	modifier = {
+		reinforce_speed = 0.20
+		recover_army_morale_speed = 0.10
+	}
+}
+#CAS
+bm_country_cas = {
+	regiments_per_development = 0.04
+	cavalry_weight = 0.0
+	artillery_weight = 0.0
+	cost_modifier = 0.75
+	sprites = { dlc011_spa_sprite_pack westerngfx_sprite_pack }
+    trigger = { 
+		tag = CAS
+	}
+	modifier = {
+		shock_damage_received = -0.05
+		fire_damage_received = -0.05
+	}
+}
+#POR
+bm_country_por = {
+	regiments_per_development = 0.04
+	cavalry_weight = 0.0
+	artillery_weight = 0.0
+	cost_modifier = 0.75
+	sprites = { dlc011_spa_sprite_pack westerngfx_sprite_pack }
+    trigger = { 
+		tag = POR
+	}
+	modifier = {
+		infantry_power = 0.1
+		movement_speed = 0.1
+	}
+}
+#BUR
+bm_country_bur = {
+	regiments_per_development = 0.04
+	cavalry_weight = 0.0
+	artillery_weight = 0.0
+	cost_modifier = 0.75
+	sprites = { dlc001_bri_sprite_pack dlc087_bri_sprite_pack westerngfx_sprite_pack }
+    trigger = { 
+		tag = BUR
+	}
+	modifier = {
+		infantry_power = 0.1
+	}
+}
+#MLO
+bm_country_mlo = {
+	regiments_per_development = 0.04
+	cavalry_weight = 0.0
+	artillery_weight = 0.0
+	cost_modifier = 0.75
+	sprites = { dlc001_bri_sprite_pack dlc087_bri_sprite_pack westerngfx_sprite_pack }
+    trigger = { 
+		tag = MLO
+	}
+	modifier = {
+		discipline = 0.025
+	}
+}
+#LAN
+bm_country_lan = {
+	regiments_per_development = 0.04
+	cavalry_weight = 0.0
+	artillery_weight = 0.0
+	cost_modifier = 0.75
+	sprites = { dlc056_mlo_sprite_pack sav_base_sprite_pack westerngfx_sprite_pack }
+    trigger = { 
+		tag = LAN 
+	}
+	modifier = {
+		fire_damage_received = -0.1
+	}
+}
+#NAP
+bm_country_nap = {
+	regiments_per_development = 0.04
+	cavalry_weight = 0.0
+	artillery_weight = 0.0
+	cost_modifier = 0.75
+	sprites = { dlc056_mlo_sprite_pack sav_base_sprite_pack westerngfx_sprite_pack }
+    trigger = { 
+		tag = NAP
+	}
+	modifier = {
+		reinforce_speed = 0.15
+		shock_damage = 0.075
+	}
+}
+#HAB
+bm_country_hap = {
+	regiments_per_development = 0.04
+	cavalry_weight = 0.0
+	artillery_weight = 0.0
+	cost_modifier = 0.75
+	sprites = { dlc028_ned_sprite_pack dlc042_ned_sprite_pack westerngfx_sprite_pack }
+    trigger = { 
+		tag = HAB
+	}
+	modifier = {
+		discipline = 0.025
+	}
+}
+#ROT
+bm_country_rot = {
+	regiments_per_development = 0.04
+	cavalry_weight = 0.0
+	artillery_weight = 0.0
+	cost_modifier = 0.75
+	sprites = { dlc028_ned_sprite_pack dlc042_ned_sprite_pack westerngfx_sprite_pack }
+    trigger = { 
+		tag = ROT
+	}
+	modifier = {
+		shock_damage_received = -0.1
+	}
+}
+#HES
+bm_country_hes = {
+	regiments_per_development = 0.04
+	cavalry_weight = 0.0
+	artillery_weight = 0.0
+	cost_modifier = 0.75
+	sprites = { dlc028_ned_sprite_pack dlc042_ned_sprite_pack westerngfx_sprite_pack }
+    trigger = { 
+		tag = HES
+	}
+	modifier = {
+		land_morale = 0.05
+		recover_army_morale_speed = 0.10
+	}
+}
+#SWI
+bm_country_swi = {
+	regiments_per_development = 0.04
+	cavalry_weight = 0.0
+	artillery_weight = 0.0
+	cost_modifier = 0.75
+	sprites = { dlc028_ned_sprite_pack dlc042_ned_sprite_pack westerngfx_sprite_pack }
+    trigger = { 
+		tag = SWI
+	}
+	modifier = {
+		infantry_power = 0.05
+		discipline = 0.025
+	}
+}
+#DAN
+bm_country_dan = {
+	regiments_per_development = 0.04
+	cavalry_weight = 0.0
+	artillery_weight = 0.0
+	cost_modifier = 0.75
+	sprites = { dlc028_ned_sprite_pack dlc042_ned_sprite_pack westerngfx_sprite_pack }
+    trigger = { 
+		tag = DAN
+	}
+	modifier = {
+		discipline = 0.05
+	}
+}
+#BRA
+bm_country_bra = {
+	regiments_per_development = 0.04
+	cavalry_weight = 0.0
+	artillery_weight = 0.0
+	cost_modifier = 0.75
+	sprites = { dlc028_ned_sprite_pack dlc042_ned_sprite_pack westerngfx_sprite_pack }
+    trigger = { 
+		tag = BRA
+	}
+	modifier = {
+		reinforce_speed = 0.1
+		infantry_power = 0.05
+	}
+}
+#POL
+bm_country_pol = {
+	regiments_per_development = 0.04
+	cavalry_weight = 0.0
+	artillery_weight = 0.0
+	cost_modifier = 0.75
+	sprites = { dlc047_zaz_sprite_pack easterngfx_sprite_pack }
+    trigger = { 
+		tag = POL
+	}
+	modifier = {
+		infantry_power = 0.1
+	}
+}
+bm_country_pol_2 = {
+	regiments_per_development = 0.02
+	cavalry_weight = 0.6
+	cavalry_cap = 16
+	artillery_weight = 0.0
+	cost_modifier = 0.75
+	sprites = { dlc047_zaz_sprite_pack easterngfx_sprite_pack }
+    trigger = { 
+		tag = POL
+	}
+	modifier = {
+		cavalry_power = 0.2
+	}
+
+}
+#LIT
+bm_country_lit = {
+	regiments_per_development = 0.04
+	cavalry_weight = 0.2
+	cavalry_cap = 4
+	artillery_weight = 0.0
+	cost_modifier = 0.75
+	sprites = { dlc047_zaz_sprite_pack easterngfx_sprite_pack }
+    trigger = { 
+		tag = LIT
+	}
+	modifier = {
+		land_morale = 0.05
+		cavalry_power = 0.2
+	}
+}
+#MOS
+bm_country_mos = {
+	regiments_per_development = 0.04
+	cavalry_weight = 0.0
+	artillery_weight = 0.0
+	cost_modifier = 0.75
+	sprites = { easterngfx_sprite_pack }
+    trigger = { 
+		tag = MOS
+	}
+	modifier = {
+		shock_damage_received = -0.1
+	}
+}
+#SWE
+bm_country_swe = {
+	regiments_per_development = 0.04
+	cavalry_weight = 0.0
+	artillery_weight = 0.0
+	cost_modifier = 0.75
+	sprites = { easterngfx_sprite_pack }
+    trigger = { 
+		tag = SWE
+	}
+	modifier = {
+		fire_damage_received = -0.1
+	}
+}
+#HUN
+bm_country_hun_1 = {
+	regiments_per_development = 0.04
+	cavalry_weight = 0.2
+	cavalry_cap = 4
+	artillery_weight = 0.0
+	cost_modifier = 0.75
+	sprites = { easterngfx_sprite_pack }
+    trigger = { 
+		tag = HUN
+	}
+	modifier = {
+		shock_damage_received = -0.1
+	}
+}
+#HUN 2 (Black Army)
+bm_country_hun_2 = {
+	regiments_per_development = 0.04
+	cavalry_weight = 0.2
+	cavalry_cap = 4
+	artillery_weight = 0.0
+	cost_modifier = 0.35
+	sprites = { easterngfx_sprite_pack }
+    trigger = { 
+		OR = {
+			has_country_modifier = hun_black_army
+			has_reform = black_army_reform
+		}
+	}
+	modifier = {
+		discipline = 0.05
+	}
+}
+#TUR
+bm_country_tur = {
+	regiments_per_development = 0.04
+	cavalry_weight = 0.2
+	cavalry_cap = 4
+	artillery_weight = 0.0
+	cost_modifier = 0.75
+	sprites = { dlc002_tur_sprite_pack dlc042_tur_sprite_pack tur_base_sprite_pack }
+    trigger = { 
+		tag = TUR
+	}
+	modifier = {
+		fire_damage = 0.1
+	}
+}
+#MAM
+bm_country_mam = {
+	regiments_per_development = 0.04
+	cavalry_weight = 0.2
+	cavalry_cap = 4
+	artillery_weight = 0.0
+	cost_modifier = 0.75
+	sprites = { muslimgfx_sprite_pack }
+    trigger = { 
+		tag = MAM
+	}
+	modifier = {
+		cavalry_shock = 0.5
+	}
+}
+#TUN
+bm_country_tun = {
+	regiments_per_development = 0.04
+	cavalry_weight = 0.4
+	cavalry_cap = 16
+	artillery_weight = 0.0
+	cost_modifier = 0.75
+	sprites = { muslimgfx_sprite_pack }
+    trigger = { 
+		tag = TUN
+	}
+	modifier = {
+		shock_damage = 0.1
+		shock_damage_received = -0.1
+	}
+}
+#MOR
+bm_country_mor = {
+	regiments_per_development = 0.04
+	cavalry_weight = 0.2
+	cavalry_cap = 4
+	artillery_weight = 0.0
+	cost_modifier = 0.75
+	sprites = { dlc058_mor_sprite_pack muslimgfx_sprite_pack }
+    trigger = { 
+		tag = MOR
+	}
+	modifier = {
+		land_morale = 0.10
+	}
+}
+#RUM
+bm_country_rum = {
+	regiments_per_development = 0.04
+	cavalry_weight = 0.2
+	cavalry_cap = 4
+	artillery_weight = 0.0
+	cost_modifier = 0.75
+	sprites = { dlc002_tur_sprite_pack dlc042_tur_sprite_pack tur_base_sprite_pack }
+    trigger = { 
+		tag = RUM
+	}
+	modifier = {
+		land_morale = 0.10
+	}
+}
+#X02
+bm_country_x02 = {
+	regiments_per_development = 0.04
+	cavalry_weight = 0.35
+	cavalry_cap = 8
+	artillery_weight = 0.0
+	cost_modifier = 0.75
+	sprites = { muslimgfx_sprite_pack }
+    trigger = { 
+		tag = X02
+	}
+	modifier = {
+		shock_damage = 0.1
+	}
+}
+#ADU
+bm_country_adu = {
+	regiments_per_development = 0.04
+	cavalry_weight = 0.2
+	cavalry_cap = 4
+	artillery_weight = 0.0
+	cost_modifier = 0.75
+	sprites = { dlc058_mor_sprite_pack muslimgfx_sprite_pack }
+    trigger = { 
+		tag = ADU
+	}
+	modifier = {
+		land_morale = 0.10
+		fire_damage = 0.1
+	}
+}
+#SCA
+bm_country_sca = {
+	regiments_per_development = 0.04
+	cavalry_weight = 0.0
+	artillery_weight = 0.0
+	cost_modifier = 0.75
+	sprites = { westerngfx_sprite_pack }
+    trigger = { 
+		tag = SCA
+	}
+	modifier = {
+		fire_damage = 0.1
+	}
+}
+#ITA
+bm_country_ita = {
+	regiments_per_development = 0.04
+	cavalry_weight = 0.0
+	artillery_weight = 0.0
+	cost_modifier = 0.75
+	sprites = { westerngfx_sprite_pack }
+    trigger = { 
+		tag = ITA
+	}
+	modifier = {
+		discipline = 0.05
+	}
+}
+#GBR
+bm_country_gbr = {
+	regiments_per_development = 0.04
+	cavalry_weight = 0.0
+	artillery_weight = 0.0
+	cost_modifier = 0.75
+	sprites = { westerngfx_sprite_pack }
+    trigger = { 
+		tag = GBR
+	}
+	modifier = {
+		fire_damage = 0.1
+		fire_damage_received = 0.1
+	}
+}
+#SPA
+bm_country_spa = {
+	regiments_per_development = 0.04
+	cavalry_weight = 0.0
+	artillery_weight = 0.0
+	cost_modifier = 0.75
+	sprites = { westerngfx_sprite_pack }
+    trigger = { 
+		tag = SPA
+	}
+	modifier = {
+		reinforce_speed = 0.2
+		infantry_power = 0.1
+	}
+}
+#LOT
+bm_country_lot = {
+	regiments_per_development = 0.04
+	cavalry_weight = 0.0
+	artillery_weight = 0.0
+	cost_modifier = 0.75
+	sprites = { westerngfx_sprite_pack }
+    trigger = { 
+		tag = LOT
+	}
+	modifier = {
+		fire_damage = 0.1
+		recover_army_morale_speed = 0.1
+	}
+}
+#TUS
+bm_country_tus = {
+	regiments_per_development = 0.04
+	cavalry_weight = 0.0
+	artillery_weight = 0.0
+	cost_modifier = 0.75
+	sprites = { westerngfx_sprite_pack }
+    trigger = { 
+		tag = TUS
+	}
+	modifier = {
+		infantry_fire = 0.25
+	}
+}
+#TTS
+bm_country_tts = {
+	regiments_per_development = 0.04
+	cavalry_weight = 0.0
+	artillery_weight = 0.0
+	cost_modifier = 0.75
+	sprites = { westerngfx_sprite_pack }
+    trigger = { 
+		tag = TTS
+	}
+	modifier = {
+		shock_damage_received = -0.1
+		recover_army_morale_speed = 0.1
+	}
+}
+#FKN
+bm_country_fkn = {
+	regiments_per_development = 0.04
+	cavalry_weight = 0.0
+	artillery_weight = 0.0
+	cost_modifier = 0.75
+	sprites = { westerngfx_sprite_pack }
+    trigger = { 
+		tag = FKN
+	}
+	modifier = {
+		infantry_fire = 0.25
+		fire_damage_received = 0.1
+	}
+}
+#SWA
+bm_country_swa = {
+	regiments_per_development = 0.04
+	cavalry_weight = 0.0
+	artillery_weight = 0.0
+	cost_modifier = 0.75
+	sprites = { westerngfx_sprite_pack }
+    trigger = { 
+		tag = SWA
+	}
+	modifier = {
+		discipline = 0.5
+	}
+}
+#WES
+bm_country_wes = {
+	regiments_per_development = 0.04
+	cavalry_weight = 0.0
+	artillery_weight = 0.0
+	cost_modifier = 0.75
+	sprites = { westerngfx_sprite_pack }
+    trigger = { 
+		tag = WES
+	}
+	modifier = {
+		shock_damage_received = -0.15
+		reinforce_speed = 0.2
+	}
+}
+#HAN
+bm_country_han = {
+	regiments_per_development = 0.04
+	cavalry_weight = 0.0
+	artillery_weight = 0.0
+	cost_modifier = 0.75
+	sprites = { westerngfx_sprite_pack }
+    trigger = { 
+		tag = HAN
+	}
+	modifier = {
+		fire_damage_received = 0.15
+	}
+}
+#PRU
+bm_country_pru = {
+	regiments_per_development = 0.04
+	cavalry_weight = 0.0
+	artillery_weight = 0.0
+	cost_modifier = 0.75
+	sprites = { westerngfx_sprite_pack }
+    trigger = { 
+		tag = PRU
+	}
+	modifier = {
+		fire_damage = 0.1
+	}
+}
+#RUS
+bm_country_rus = {
+	regiments_per_development = 0.04
+	cavalry_weight = 0.0
+	artillery_weight = 0.0
+	cost_modifier = 0.75
+	sprites = { easterngfx_sprite_pack }
+    trigger = { 
+		tag = RUS
+	}
+	modifier = {
+		fire_damage = 0.1
+	}
+}
+bm_country_ukr = {
+regiments_per_development = 0.04
+	cavalry_weight = 0.0
+	artillery_weight = 0.0
+	cost_modifier = 0.75
+	sprites = { easterngfx_sprite_pack }
+    trigger = { 
+		tag = UKR
+	}
+	modifier = {
+		movement_speed = 0.1
+		discipline = 0.05
+	}
+}

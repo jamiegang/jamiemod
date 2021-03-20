@@ -1,61 +1,23 @@
 government = monarchy
-add_government_reform = feudalism_reform
+add_government_reform = austrian_archduchy_reform
 government_rank = 1
 primary_culture = austrian
 religion = catholic
-elector = yes
 technology_group = western
 capital = 134 # Wien
-historical_friend = HUN
-historical_friend = PFI
-historical_rival = TUR
-historical_rival = FRA
-national_focus = ADM
+elector = yes
 
-1395.8.29 = {
-	monarch = {
-		name = "Albrecht IV"
-		dynasty = "von Habsburg"
-		adm = 1
-		dip = 1
-		mil = 3
-	}
-}
 
-1397.8.10 = {
-	heir = {
-		name = "Albrecht"
-		monarch_name = "Albrecht V"
-		dynasty = "von Habsburg"
-		birth_date = 1397.8.10
-		death_date = 1439.10.27
-		claim = 95
-		adm = 1
-		dip = 1
-		mil = 3
-	}
-}
-
-1404.9.14 = {
-	monarch = {
-		name = "Albrecht V"
-		dynasty = "von Habsburg"
-		birth_date = 1397.8.10
-		adm = 1
-		dip = 1
-		mil = 3
-	}
-}
-
+add_accepted_culture = slovene
 
 1439.10.27 = {
 	monarch = {
 		name = "Friedrich III"
 		dynasty = "von Habsburg"
 		birth_date = 1415.9.21
-		adm = 4
+		adm = 3
 		dip = 5
-		mil = 3
+		mil = 4
 	}
 	
 	clear_scripted_personalities = yes
@@ -73,6 +35,7 @@ national_focus = ADM
 		dip = 3
 		mil = 2
 	}
+	set_country_flag = hab_ladislaus_postumus_heir
 }
 
 #1450.1.1 = { decision = court_of_wards_and_liveries }
@@ -92,6 +55,7 @@ national_focus = ADM
 }
 
 1457.11.24 = {
+	clr_country_flag = hab_ladislaus_postumus_heir
 	monarch = {
 		name = "Friedrich III"
 		dynasty = "von Habsburg"

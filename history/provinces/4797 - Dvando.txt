@@ -1,0 +1,16 @@
+# - Dvando (New Province)
+owner = LND
+controller = LND 
+culture = lunda
+religion = shamanism #Fetishism
+capital = "Sango"
+trade_goods = grain
+hre = no
+base_tax = 2
+base_production = 1
+base_manpower = 1
+is_city = yes
+add_core = LND
+
+
+discovered_by = central_african
